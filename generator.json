@@ -1,0 +1,24 @@
+{
+	"baseName": "sunsetApp",
+	"databaseType": "mysql",
+	"hostName": "127.0.0.1",
+	"databaseName": "sunset_main",
+	"userName": "root",
+	"password": "",
+	"entities": [
+		{
+			"name": "products",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": false
+				}
+			]
+		}
+	],
+	"composer": false
+}
