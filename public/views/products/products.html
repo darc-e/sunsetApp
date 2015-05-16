@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <label>ID</label>
                     <input type="text" class="form-control" name="id"
-                           ng-model="products.id" readonly>
+                           ng-model="products.prod_id" readonly>
                 </div>
 
                 
@@ -24,7 +24,7 @@
                     <label>myattr:</label>
                     
                     <input type="text" class="form-control" name="myattr"
-                           ng-model="products.myattr" ng-required="false"
+                           ng-model="products.colour" ng-required="false"
                            />
                     <span class="error" ng-show="form.myattr.$error.minlength">Must be at least  characters.</span>
                     <span class="error" ng-show="form.myattr.$error.maxlength">Must be at most  characters.</span>

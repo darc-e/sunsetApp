@@ -40,13 +40,12 @@ module.exports = function (grunt) {
         {
           context: '/sunsetApp',
           host: 'localhost',
-          port: 8080,
           https: false,
           changeOrigin: false
         }
       ],
       options: {
-        port: 9000,
+        port: 8080,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -113,4 +112,8 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  grunt.registerTask('default', [
+    'server'
+  ]);
 };

@@ -1,0 +1,50 @@
+<div class="row container inside-container product-list" ng-controller="ProductsCtrl"> 
+    <div class="col-md-2 col-sm-2 col-xs-3"> 
+        <div class="panel panel-default"> 
+            <div class="panel-heading sun-search">Search Products</div> 
+            <div class="panel-body"> 
+                <form> 
+                    <div class="form-group"> 
+                        <label for="prodProfile">PROFILE #</label> 
+                        <select ng-model="search.profile" ng-options="product.profile for product in products" class="form-control" id="prodProfile"> <option value="">Select All </select> 
+                        <label for="prodHeight">PROFILE HEIGHT</label> 
+                        <select ng-model="search.height" ng-options="i.height for item in products" class="form-control" id="prodHeight"> 
+                            <option value="">Select All </option>
+                        </select> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="rabbetWidth">RABBET WIDTH </label> 
+                        <select class="form-control" id="rabbetWidth"> 
+                            <option value="0">Select All  </option>
+                        </select> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="prodColour">PROFILE FINISH</label> 
+                        <select ng-model="search.finish" ng-options="product.colour for product in products" class="form-control" id="prodColour"> 
+                            <option value="">Select All </option>
+                        </select> 
+                    </div> 
+                </form> 
+            </div> 
+        </div> 
+    </div> 
+    <div class="col-md-10 col-sm-10 col-xs-9"> 
+        <ul class="products" ng-repeat=" product in filteredProducts = ( products| filter:search.profile )"> 
+            <li ng-hide="filteredProducts.length > 1 || product.item"> No products available for this profile </li> 
+            <li ng-show="product.item" class="row"> 
+                <div class="col-md-1 col-sm-1 col-xs-1"> 
+                    <img ng-src="images/products/profile/ {{product.profile | lowercase;}}.png"> 
+                </div> 
+                <div class="col-md-11 col-sm-11 col-xs-11"> 
+                    <ul class="products-list"> 
+                        <li ng-repeat="(key,  item) in product.item"> 
+                            <a href="products/ {{product.$id;}}/items/ {{key;}}"> 
+                                <img ng-src="images/products/small/ {{item.profile | lowercase;}}/ {{key | lowercase;}}.png"> <p> {{key;}}</p>
+                            </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </li> 
+        </ul> 
+    </div> 
+</div>

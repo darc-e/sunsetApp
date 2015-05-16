@@ -1,12 +1,21 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-8">
-            <h1>Welcome to SunsetApp!</h1>
-            <p class="lead">This is your homepage, ready for editing</p>
-
-            <p>
-             <span translate="main.like">If you like this Angular-Slim generator, please give us a star at </span>&nbsp;<a href="https://github.com/rayokota/generator-angular-slim" target="_blank" translate="main.github">Github</a>!
-            </p>
-        </div>
+        <div class="row main-container"> 
+        	<div class="col-md-4 col-xs-12 home-left-text"> 
+        		<h1 class="home-page"> Acheiving excellence in quality & design </h1> 
+        		<p>Since 1983 Sunset Mouldings has produced versatile, vibrant and unique framing solutions. At Sunset Mouldings, we have created a position for ourselves at the leading edge of the moulding industry.</p> <p>We are proudly 100% Canadian owned and operated. All mouldings are manufactured and finished within our own facilities. Through the use of the highest quality materials and genuine design, Sunset is able to encompass the quality, versatility and unique flavour which today’s consumers demand. Our products breathe excellence and are adaptable to the ever-changing markets of today.</p> 
+        	</div> 
+        	<div class="col-md-8 col-sm-12 col-xs-12 home-slides"> 
+        		<div id="main-carousel" ng-controller="CarouselCtrl" >
+		            <carousel interval="myInterval">
+		              <slide ng-repeat="slide in slides" active="slide.active">
+		                <img ng-src="{{slide.image}}" style="margin:auto;">
+		                
+		              </slide>
+		            </carousel>
+		        </div>
+        	</div> 
+        </div> 
+    </div>
     </div>
 </div>
