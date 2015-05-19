@@ -6,5 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Colours' => $baseDir . '/models/Colours.php',
+    'Fractions' => $baseDir . '/models/Fractions.php',
+    'Members' => $baseDir . '/models/Members.php',
     'Products' => $baseDir . '/models/Products.php',
+    'Profiles' => $baseDir . '/models/Profiles.php',
+    'Rabbets' => $baseDir . '/models/Rabbets.php',
+    'Test' => $baseDir . '/models/Test.php',
+    'Widths' => $baseDir . '/models/Widths.php',
 );

@@ -44,7 +44,7 @@ Here is some sample code for using PDO provider and securing some routes using r
     $app = new Slim();
     $config = array(
         'provider' => 'PDO',
-        'pdo' => new PDO('mysql:host=localhost;dbname=database_name', 'username', 'password'),
+        'pdo' => new PDO('mysql:host=127.0.0.1;dbname=database_name', 'username', 'password'),
         'auth.type' => 'form',
         'login.url' => '/',
         'security.urls' => array(

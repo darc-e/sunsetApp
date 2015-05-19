@@ -37,7 +37,8 @@ $app->get('/', function() use ($app) {
 
 
 $app->get('/sunsetApp/products', function() {
-    $products = Products::all();
+    $products = Products::with('Profile', 'Colour')->get();
+    //$products = Products::with('Colour')->get();
     echo $products->toJson();
 });
 
@@ -82,6 +83,56 @@ $app->delete('/sunsetApp/products/:id', function($id) use($app) {
         $app->stop();
     }
     $products->delete();
+    $app->response->status(204);
+});
+
+
+$app->get('/sunsetApp/profiles', function() {
+    $profiles = Profiles::all();
+    echo $profiles->toJson();
+});
+
+$app->get('/sunsetApp/profiles/:id', function($id) use($app) {
+    $profiles = Profiles::find($id);
+    if (is_null($profiles)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    echo $profiles->toJson();    
+});
+
+$app->post('/sunsetApp/profiles', function() use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $profiles = new Profiles;
+    
+    $profiles->myattr = $obj->{'myattr'};
+    $profiles->save();
+    $app->response->status(201);
+    echo $profiles->toJson();    
+});
+
+$app->put('/sunsetApp/profiles/:id', function($id) use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $profiles = Profiles::find($id);
+    if (is_null($profiles)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    
+    $profiles->myattr = $obj->{'myattr'};
+    $profiles->save();
+    echo $profiles->toJson();    
+});
+
+$app->delete('/sunsetApp/profiles/:id', function($id) use($app) {
+    $profiles = Profiles::find($id);
+    if (is_null($profiles)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    $profiles->delete();
     $app->response->status(204);
 });
 

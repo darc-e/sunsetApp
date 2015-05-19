@@ -11,7 +11,7 @@
  *
  * Example of jsTestDriver.conf for running scenario tests with JSTD:
   <pre>
-    server: http://localhost:9877
+    server: http://127.0.0.1:9877
 
     load:
       - lib/angular-scenario.js
@@ -20,7 +20,7 @@
       # your test files go here #
 
     proxy:
-     - {matcher: "/your-prefix/*", server: "http://localhost:8000/"}
+     - {matcher: "/your-prefix/*", server: "http://127.0.0.1:8000/"}
   </pre>
  *
  * For more information on how to configure jstd proxy, see {@link http://code.google.com/p/js-test-driver/wiki/Proxy}
@@ -38,7 +38,7 @@
  *
  * Let's assume you are using the above configuration (jsTestDriver.conf and jstd-scenario-adapter-config.js):
  * Now, when you call <code>browser().navigateTo('index.html')</code> in your scenario test, the browser will open /your-prefix/index.html.
- * That matches the proxy, so JSTD will proxy this request to http://localhost:8000/index.html.
+ * That matches the proxy, so JSTD will proxy this request to http://127.0.0.1:8000/index.html.
  */
 
 /**

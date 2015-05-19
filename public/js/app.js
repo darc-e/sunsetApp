@@ -14,6 +14,10 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date']
 	        templateUrl: 'views/product/product.html',
 	        controller: 'ProductController'
 	    })
+	    .when('/profiles', {
+	        templateUrl: 'views/profiles/profiles.html',
+	        controller: 'ProfilesController'
+	    })
 	    .when("/whereToBuy",{
 	      	templateUrl:"views/wheretobuy/wheretobuy.html",
 	      	controller:"WheretobuyController"

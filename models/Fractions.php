@@ -7,6 +7,9 @@ class Fractions extends Illuminate\Database\Eloquent\Model {
     public $timestamps = false;
     
     // need to explicitly cast attributes of type Integer, Float, Boolean 
-    
+    public function products()
+    {
+        return $this->belongsToMany('Products', 'height_id' );
+    }
     
 }

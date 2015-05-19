@@ -39,7 +39,7 @@ module.exports = function (grunt) {
       proxies: [
         {
           context: '/sunsetApp',
-          host: 'localhost',
+          host: '127.0.0.1',
           https: false,
           changeOrigin: false
         }
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       options: {
         port: 8080,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '127.0.0.1',
         livereload: 35729
       },
       livereload: {

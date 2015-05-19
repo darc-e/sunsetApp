@@ -18,6 +18,32 @@
 					"required": false
 				}
 			]
+		},
+		{
+			"name": "profiles",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "test",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
 		}
 	],
 	"composer": false

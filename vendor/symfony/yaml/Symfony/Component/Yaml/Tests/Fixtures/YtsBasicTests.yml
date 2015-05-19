@@ -173,11 +173,11 @@ brief: |
      needing spaces as indentation.
 yaml: |
      allow:
-     - 'localhost'
+     - '127.0.0.1'
      - '%.sourceforge.net'
      - '%.freepan.org'
 php: |
-     array('allow' => array('localhost', '%.sourceforge.net', '%.freepan.org'))
+     array('allow' => array('127.0.0.1', '%.sourceforge.net', '%.freepan.org'))
 ---
 todo: true
 test: Merge key

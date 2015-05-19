@@ -149,7 +149,7 @@ use \Phpmig\Adapter,
 $container = new Pimple();
 
 $container['db'] = $container->share(function() {
-    $dbh = new PDO(sprintf('pgsql:dbname=%s;host=%s;password=%s', 'dbname', 'localhost', 'password'), 'dbuser', '');
+    $dbh = new PDO(sprintf('pgsql:dbname=%s;host=%s;password=%s', 'dbname', '127.0.0.1', 'password'), 'dbuser', '');
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbh;
 });
@@ -238,7 +238,7 @@ $container['db'] = $container->share(function() {
         'dbname' => 'DBNAME',
         'username' => 'USERNAME',
         'password' => 'PASSWORD',
-        'host' => 'localhost'
+        'host' => '127.0.0.1'
     ));
 });
 
