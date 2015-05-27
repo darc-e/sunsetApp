@@ -1,18 +1,24 @@
 <div class="row container inside-container product-list"> 
-    <div class="col-md-2 col-sm-2 col-xs-3"> 
+    <div class="col-md-2 col-sm-3 col-xs-12"> 
         <div class="panel panel-default"> 
             <div class="panel-heading sun-search">Search Products</div> 
             <div class="panel-body"> 
                 <form> 
                     <div class="form-group"> 
                         <label for="prodProfile">PROFILE #</label> 
-                        <select ng-model="search.profile" ng-options="product.profile for product in products" class="form-control" id="prodProfile"> <option value="">Select All </select> 
+                        <select ng-model="search.profile" ng-options="profile in profiles" class="form-control" id="prodProfile"> 
+                            <option value="{{profiles.name}}">Select All 
+                            <option id = "profiles.Id" value=""></option>
+                        </select> 
+                    </div>
+                    <div class="form-group"> 
                         <label for="prodHeight">PROFILE HEIGHT</label> 
+
                         <select ng-model="search.height" ng-options="i.height for item in products" class="form-control" id="prodHeight"> 
                             <option value="">Select All </option>
-                            <option value="">yo mama is a ho</option>
+                           
                         </select> 
-                    </div> 
+                    </div>
                     <div class="form-group"> 
                         <label for="rabbetWidth">RABBET WIDTH </label> 
                         <select class="form-control" id="rabbetWidth"> 
@@ -29,16 +35,17 @@
             </div> 
         </div> 
     </div> 
-    <div class="col-md-10 col-sm-10 col-xs-9"> 
+    <div class="col-md-10 col-sm-8 col-xs-12"> 
         <ul class="products" ng-repeat=" profile in profiles" ng-if="profile.available === 1"> 
             <li class="row"> 
                 <div class="col-md-1 col-sm-1 col-xs-1"> 
                     <img ng-src="images/products/profile/{{profile.name | lowercase;}}.png"> 
                 </div> 
                 <div class="col-md-11 col-sm-11 col-xs-11"> 
+                    
                     <ul class="products-list"> 
-                        <li ng-repeat="product in products" ng-if="product.prof_id === profile.prof_id"> 
-                            <a href="#" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
+                        <li ng-repeat="product in products" ng-if="product.prof_id === profile.id"> 
+                            <a href="sunsetApp/products/{{product.id}}" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
                                 <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code | lowercase}}-{{product.code}}.png"> <p> {{profile.name}}-{{product.colour.colour_code}}-{{product.code}}</p>
                             </a>
                             <!--{{product}}<br/>-->
@@ -46,8 +53,8 @@
                                 <p>YO + {{profile.name}}</p>
                                 <img ng-src="images/products/small/{{profile.name | l[owercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}-{{product.code}}.png"> 
                             </a>-->
-                            <a href="#" ng-if="profile.name != 'sl2' && profile.name != 'sl4' && profile.name != 'sml' "> 
-                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}.png"> <p>fufu {{profile.name}}-{{product.colour.colour_code}}</p>
+                            <a href="/products/{{product.id}}" ng-if="profile.name != 'sl2' && profile.name != 'sl4' && profile.name != 'sml' "> 
+                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}.png"> <p>{{profile.name}}-{{product.colour.colour_code}}</p>
                             </a>
                         </li> 
                     </ul> 

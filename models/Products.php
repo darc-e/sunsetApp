@@ -3,7 +3,6 @@
 class Products extends Illuminate\Database\Eloquent\Model {
 
     protected $table = "products";
-    public $primaryKey = "prod_id";
     public $timestamps = false;
     
     // need to explicitly cast attributes of type Integer, Float, Boolean 
@@ -13,7 +12,10 @@ class Products extends Illuminate\Database\Eloquent\Model {
     public function colour(){
     	return $this->belongsTo('Colours', 'colour_id');
     }
-    public function fraction(){
+    public function height(){
     	return $this->belongsTo('Fractions', 'height_id');
+    }
+    public function rabbet(){
+        return $this->belongsTo('Fractions', 'rabbet');
     }
 }

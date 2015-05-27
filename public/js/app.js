@@ -10,27 +10,23 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/products/products.html',
 	        controller: 'ProductsController'
 	    })
-	    .when('/products/:id', {
-	        templateUrl: 'views/product/product.html',
-	        controller: 'ProductsController'
-	    })
-	    .when('/profiles', {
+	    .when('/sunsetApp/profiles', {
 	        templateUrl: 'views/profiles/profiles.html',
 	        controller: 'ProfilesController'
 	    })
-	    .when("/whereToBuy",{
-	      	templateUrl:"views/wheretobuy/wheretobuy.html",
-	      	controller:"WheretobuyController"
+	    .when('/sunsetApp/whereToBuy', {
+	        templateUrl: 'views/whereToBuy/whereToBuy.html',
+	        controller: 'WhereToBuyController'
 	    })
-	    .when("/catalogue",{
-	      	templateUrl:"views/catalogue/catalogue.html",
-	      	controller:"CatalogueController"
+	    .when('/sunsetApp/catalogue', {
+	        templateUrl: 'views/catalogue/catalogue.html',
+	        controller: 'CatalogueController'
 	    })
-	    .when("/contact",{
-	      	templateUrl:"views/contact/contact.html",
-	      	controller:"ContactController"
+	    .when('/sunsetApp/contact', {
+	        templateUrl: 'views/contact/contact.html',
+	        controller: 'ContactController'
 	    })
-      	.otherwise({redirectTo: '/'});
+      	.otherwise({redirectTo: '/yo'});
 
       	$locationProvider.html5Mode(true);
   }]);

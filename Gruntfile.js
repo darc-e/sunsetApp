@@ -38,8 +38,9 @@ module.exports = function (grunt) {
     connect: {
       proxies: [
         {
-          context: '/sunsetApp',
-          host: '127.0.0.1',
+          context: '/',
+          host: 'sunset.local',
+           port: 8,
           https: false,
           changeOrigin: false
         }
@@ -104,7 +105,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('serve', function (target) {
     grunt.task.run([
       //'copy:dist',
       'configureProxies',
@@ -114,6 +115,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', [
-    'server'
+    'serve'
   ]);
 };

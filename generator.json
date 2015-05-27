@@ -1,7 +1,7 @@
 {
 	"baseName": "sunsetApp",
 	"databaseType": "mysql",
-	"hostName": "127.0.0.1",
+	"hostName": "localhost",
 	"databaseName": "sunset_main",
 	"userName": "root",
 	"password": "",
@@ -33,7 +33,33 @@
 			]
 		},
 		{
-			"name": "test",
+			"name": "whereToBuy",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "catalogue",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "contact",
 			"attrs": [
 				{
 					"attrName": "myattr",
