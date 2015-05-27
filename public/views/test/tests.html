@@ -21,13 +21,13 @@
 
                 
                 <div class="form-group">
-                    <label>myattr:</label>
+                    <label>tester:</label>
                     
-                    <input type="text" class="form-control" name="myattr"
-                           ng-model="test.myattr" ng-required="true"
+                    <input type="number" class="form-control" name="tester"
+                           ng-model="test.tester" ng-required="true"
                            />
-                    <span class="error" ng-show="form.myattr.$error.minlength">Must be at least  characters.</span>
-                    <span class="error" ng-show="form.myattr.$error.maxlength">Must be at most  characters.</span>
+                    <span class="error" ng-show="form.tester.$error.min">Must be greater than or equal to .</span>
+                    <span class="error" ng-show="form.tester.$error.max">Must be less than or equal to .</span>
                 </div>
                 
 
@@ -50,7 +50,7 @@
             <tr>
                 <th>ID</th>
                 
-                <th>myattr</th>
+                <th>tester</th>
                 
             </tr>
             </thead>
@@ -58,7 +58,7 @@
             <tr ng-repeat="test in tests">
                 <td>{{test.id}}</td>
                 
-                <td>{{test.myattr }}</td>
+                <td>{{test.tester }}</td>
                 
                 <td>
                     <button type="submit"

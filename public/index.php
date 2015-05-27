@@ -38,14 +38,14 @@ $app->get('/', function() use ($app) {
 
 $app->get('/sunsetApp/products', function() {
     //$products = Products::with('Colour')->get();
-    $products = Profiles::all();
-    //$products = Products::with('Colour')->get();
+    //$profiles = Profiles::all();
+    $products = Products::with('Colour')->get();
     echo $products->toJson();
 
 });
 
 $app->get('/sunsetApp/products/:id', function($id) use($app) {
-    $products = Products::find($prod_id);
+    $products = Products::find($id);
     if (is_null($products)) {
         $app->response->status(404);
         $app->stop();
@@ -91,7 +91,6 @@ $app->delete('/sunsetApp/products/:id', function($id) use($app) {
 
 $app->get('/sunsetApp/profiles', function() {
     $profiles = Profiles::all();
-
     echo $profiles->toJson();
 });
 

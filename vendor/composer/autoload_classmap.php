@@ -9,6 +9,7 @@ return array(
     'Colours' => $baseDir . '/models/Colours.php',
     'Fractions' => $baseDir . '/models/Fractions.php',
     'Members' => $baseDir . '/models/Members.php',
+    'Product' => $baseDir . '/models/Product.php',
     'Products' => $baseDir . '/models/Products.php',
     'Profiles' => $baseDir . '/models/Profiles.php',
     'Rabbets' => $baseDir . '/models/Rabbets.php',

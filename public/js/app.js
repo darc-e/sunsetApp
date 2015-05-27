@@ -6,27 +6,27 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/home/home.html', 
 	        controller: 'HomeController'
     	})
-    	.when('/products', {
+    	.when('/sunsetApp/products', {
 	        templateUrl: 'views/products/products.html',
 	        controller: 'ProductsController'
 	    })
-	    .when('/products/:id', {
+	    .when('/sunsetApp/products/:id', {
 	        templateUrl: 'views/product/product.html',
 	        controller: 'ProductsController'
 	    })
-	    .when('/profiles', {
+	    .when('/sunsetApp/profiles', {
 	        templateUrl: 'views/profiles/profiles.html',
 	        controller: 'ProfilesController'
 	    })
-	    .when("/whereToBuy",{
+	    .when("/sunsetApp/whereToBuy",{
 	      	templateUrl:"views/wheretobuy/wheretobuy.html",
 	      	controller:"WheretobuyController"
 	    })
-	    .when("/catalogue",{
+	    .when("//sunsetAppcatalogue",{
 	      	templateUrl:"views/catalogue/catalogue.html",
 	      	controller:"CatalogueController"
 	    })
-	    .when("/contact",{
+	    .when("//sunsetAppcontact",{
 	      	templateUrl:"views/contact/contact.html",
 	      	controller:"ContactController"
 	    })
