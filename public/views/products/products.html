@@ -1,75 +1,59 @@
-<div>
-
-    <h2>Products</h2>
-
-    <script type = "text/ng-template" id="products-save.html">
-        <form name="form" role="form" novalidate
-              class="ng-scope ng-invalid ng-invalid-required ng-dirty"
-              ng-submit="ok()">
-
-            <div class="modal-header">
-                <button type="button" class="close"
-                        ng-click="cancel()">&times;</button>
-                <h4 class="modal-title" id="myProductsLabel">Create or edit a Products</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>ID</label>
-                    <input type="text" class="form-control" name="id"
-                           ng-model="products.prod_id" readonly>
-                </div>
-
-                
-                <div class="form-group">
-                    <label>myattr:</label>
-                    
-                    <input type="text" class="form-control" name="myattr"
-                           ng-model="products.colour" ng-required="false"
-                           />
-                    <span class="error" ng-show="form.myattr.$error.minlength">Must be at least  characters.</span>
-                    <span class="error" ng-show="form.myattr.$error.maxlength">Must be at most  characters.</span>
-                </div>
-                
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel
-                </button>
-                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
-            </div>
-        </form>
-    </script>
-
-    <button class="btn btn-primary btn-lg" ng-click="create()">
-        <span class="glyphicon glyphicon-flash"></span> Create a new Products
-    </button>
-    <!--<spam>{{products}}</span>-->
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Profile</th>
-                <td>Colour</td>  
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="product in products">
-                <td>{{product.profile.name }}</td>
-                <td>{{product.colour.colour_code }}</td>
-                <td>
-                    <button type="submit"
-                            ng-click="update(products.id)"
-                            class="btn">
-                        <span class="glyphicon glyphicon-pencil"></span> Edit
-                    </button>
-                    <button type="submit"
-                            ng-click="delete(products.id)"
-                            class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove-circle"></span> Delete
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="row container inside-container product-list"> 
+    <div class="col-md-2 col-sm-2 col-xs-3"> 
+        <div class="panel panel-default"> 
+            <div class="panel-heading sun-search">Search Products</div> 
+            <div class="panel-body"> 
+                <form> 
+                    <div class="form-group"> 
+                        <label for="prodProfile">PROFILE #</label> 
+                        <select ng-model="search.profile" ng-options="product.profile for product in products" class="form-control" id="prodProfile"> <option value="">Select All </select> 
+                        <label for="prodHeight">PROFILE HEIGHT</label> 
+                        <select ng-model="search.height" ng-options="i.height for item in products" class="form-control" id="prodHeight"> 
+                            <option value="">Select All </option>
+                            <option value="">yo mama is a ho</option>
+                        </select> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="rabbetWidth">RABBET WIDTH </label> 
+                        <select class="form-control" id="rabbetWidth"> 
+                            <option value="0">Select All  </option>
+                        </select> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="prodColour">PROFILE FINISH</label> 
+                        <select ng-model="search.finish" ng-options="product.colour for product in products" class="form-control" id="prodColour"> 
+                            <option value="">Select All </option>
+                        </select> 
+                    </div> 
+                </form> 
+            </div> 
+        </div> 
+    </div> 
+    <div class="col-md-10 col-sm-10 col-xs-9"> 
+        <ul class="products" ng-repeat=" profile in profiles" ng-if="profile.available === 1"> 
+            <li class="row"> 
+                <div class="col-md-1 col-sm-1 col-xs-1"> 
+                    <img ng-src="images/products/profile/{{profile.name | lowercase;}}.png"> 
+                </div> 
+                <div class="col-md-11 col-sm-11 col-xs-11"> 
+                    <ul class="products-list"> 
+                        <li ng-repeat="product in products" ng-if="product.prof_id === profile.prof_id"> 
+                            <a href="#" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
+                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code | lowercase}}-{{product.code}}.png"> <p> {{profile.name}}-{{product.colour.colour_code}}-{{product.code}}</p>
+                            </a>
+                            <!--{{product}}<br/>-->
+                            <!--<a href="#" ng-if="proflie.name === 'sl2' || proflie.name === 'sl4' || profile.name === 'sml' ">
+                                <p>YO + {{profile.name}}</p>
+                                <img ng-src="images/products/small/{{profile.name | l[owercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}-{{product.code}}.png"> 
+                            </a>-->
+                            <a href="#" ng-if="profile.name != 'sl2' && profile.name != 'sl4' && profile.name != 'sml' "> 
+                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}.png"> <p>fufu {{profile.name}}-{{product.colour.colour_code}}</p>
+                            </a>
+                        </li> 
+                    </ul> 
+                </div> 
+            </li> 
+        </ul> 
+    </div> 
 </div>
+

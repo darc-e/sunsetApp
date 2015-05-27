@@ -1,5 +1,5 @@
 // Declare app level module which depends on filters, and services
-angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date'])
+angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date', 'angular.filter'])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       	.when('/', {
@@ -10,9 +10,9 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date']
 	        templateUrl: 'views/products/products.html',
 	        controller: 'ProductsController'
 	    })
-	    .when('/products/:prodId/items/:itemId', {
+	    .when('/products/:id', {
 	        templateUrl: 'views/product/product.html',
-	        controller: 'ProductController'
+	        controller: 'ProductsController'
 	    })
 	    .when('/profiles', {
 	        templateUrl: 'views/profiles/profiles.html',

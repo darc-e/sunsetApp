@@ -10,6 +10,7 @@ class Profiles extends Illuminate\Database\Eloquent\Model {
     
     public function products()
     {
-        return $this->belongsToMany('Products', 'prof_id' );
+        return $this->hasMany('Products', 'prof_id');
     }
+    
 }

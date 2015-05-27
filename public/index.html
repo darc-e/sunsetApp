@@ -24,7 +24,7 @@
                             <div class="info row">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-12 log-in"> <a ng-href="/login">Client Log in <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a> 
+                                        <div class="col-md-12 log-in"> <a ng-href="http://sunset.local/login">Client Log in <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a> 
                                         </div>
                                     </div>
                                     <div class="row">
@@ -50,14 +50,14 @@
                                 <ul class="nav navbar-nav" ng-controller="NavCtrl">
                                     <li ng-class="classActive('/')"><a ng-href="/">HOME</a>
                                     </li>
-                                    <li ng-class="classActive('/products','/products/details/*')"><a ng-href="products">PRODUCTS</a>
-                                    <li ng-class="classActive('/profiles','/profiles/details/*')"><a ng-href="profiles">PROFILES</a>
+                                    <li ng-class="classActive('/products','/products/details/*')"><a ng-href="/products">PRODUCTS</a>
+                                    <li ng-class="classActive('/profiles','/profiles/details/*')"><a ng-href="/profiles">PROFILES</a>
                                     </li>
-                                    <li ng-class="classActive('/whereToBuy')"><a ng-href="whereToBuy">WHERE TO BUY</a>
+                                    <li ng-class="classActive('/whereToBuy')"><a ng-href="/whereToBuy">WHERE TO BUY</a>
                                     </li>
-                                    <li ng-class="classActive('/catalogue')"><a ng-href="catalogue">CATALOGUE</a>
+                                    <li ng-class="classActive('/catalogue')"><a ng-href="/catalogue">CATALOGUE</a>
                                     </li>
-                                    <li ng-class="classActive('/contact')"><a ng-href="contact">CONTACTS</a>
+                                    <li ng-class="classActive('/contact')"><a ng-href="/contact">CONTACTS</a>
                                     </li>
                                 </ul>
                                 <div class="nav-number">
@@ -74,19 +74,19 @@
             <div class="footer">
                 <div class="container">
                     <div class="col-md-3 col-xs-3 footer-left">
-                        <p>&copy Sunset Mouldings 2105</p>
+                        <p>&copy Sunset Mouldings 2015</p>
                     </div>
                     <div class="col-md-9 col-xs-9 footer-nav">
                         <ul class="footer-nav">
-                            <li ng-class="classActive('/newsite/')" class="active"><a ng-href="/">HOME</a>
+                            <li ng-class="classActive('/')" class="active"><a ng-href="/">HOME</a>
                             </li>
-                            <li ng-class="classActive('/newsite/products')"><a ng-href="products">PRODUCTS</a>
+                            <li ng-class="classActive('/products')"><a ng-href="products">PRODUCTS</a>
                             </li>
-                            <li ng-class="classActive('/newsite/whereToBuy')"><a ng-href="whereToBuy">WHERE TO BUY</a>
+                            <li ng-class="classActive('/whereToBuy')"><a ng-href="whereToBuy">WHERE TO BUY</a>
                             </li>
-                            <li ng-class="classActive('/newsite/catalogue')"><a ng-href="catalogue">CATALOGUE</a>
+                            <li ng-class="classActive('/catalogue')"><a ng-href="catalogue">CATALOGUE</a>
                             </li>
-                            <li ng-class="classActive('/newsite/contact')"><a ng-href="contact">CONTACTS</a>
+                            <li ng-class="classActive('/contact')"><a ng-href="contact">CONTACTS</a>
                             </li>
                         </ul>
                     </div>
@@ -113,6 +113,7 @@
         <script src="lib/angular-route/angular-route.js"></script>
         <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="lib/angular-ui-date/src/date.js"></script>
+        <script src="lib/angular-filter/dist/angular-filter.min.js"></script>
 
         <script src="js/app.js"></script>
         <script src="js/home/home-controller.js"></script>

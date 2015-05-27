@@ -9,6 +9,9 @@ angular.module('sunsetApp')
         resolve:{
           resolvedProducts: ['Products', function (Products) {
             return Products.query();
+          }],
+          resolvedProfiles: ['Profiles', function (Profiles) {
+            return Profiles.query();
           }]
         }
       })

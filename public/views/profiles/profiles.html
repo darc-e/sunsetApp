@@ -1,7 +1,8 @@
 <div>
 
-    <h2>Profiles</h2>
-
+    <h2>Profiles</h2>   
+    <p>{{profiles}}</p>
+    <p>{{products}}<p>
     <script type = "text/ng-template" id="profiles-save.html">
         <form name="form" role="form" novalidate
               class="ng-scope ng-invalid ng-invalid-required ng-dirty"
@@ -58,7 +59,7 @@
             <tr ng-repeat="profiles in profiles">
                 <td>{{profiles.prof_id}}</td>
                 
-                <td>{{profiles.name }}</td>
+                <td>{{profiles.name}}</td>
                 
                 <td>
                     <button type="submit"

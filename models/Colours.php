@@ -12,4 +12,9 @@ class Colours extends Illuminate\Database\Eloquent\Model {
     {
         return $this->belongsToMany('Products', 'colour_id' );
     }
+
+    public function profiles()
+    {
+    	return $this->hasManyThrough('Products', 'Profiles', 'prof_id', 'colour_id');
+    }
 }

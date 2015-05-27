@@ -37,13 +37,15 @@ $app->get('/', function() use ($app) {
 
 
 $app->get('/sunsetApp/products', function() {
-    $products = Products::with('Profile', 'Colour')->get();
+    //$products = Products::with('Colour')->get();
+    $products = Profiles::all();
     //$products = Products::with('Colour')->get();
     echo $products->toJson();
+
 });
 
 $app->get('/sunsetApp/products/:id', function($id) use($app) {
-    $products = Products::find($id);
+    $products = Products::find($prod_id);
     if (is_null($products)) {
         $app->response->status(404);
         $app->stop();
@@ -62,12 +64,12 @@ $app->post('/sunsetApp/products', function() use($app) {
     echo $products->toJson();    
 });
 
-$app->put('/sunsetApp/products/:id', function($id) use($app) {
+$app->put('/sunsetApp/products/:prod_id', function($prod_id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
-    $products = Products::find($id);
+    $products = Products::find($prod_id);
     if (is_null($products)) {
-        $app->response->status(404);
+        $app->response->status(4040);
         $app->stop();
     }
     
@@ -89,6 +91,7 @@ $app->delete('/sunsetApp/products/:id', function($id) use($app) {
 
 $app->get('/sunsetApp/profiles', function() {
     $profiles = Profiles::all();
+
     echo $profiles->toJson();
 });
 
