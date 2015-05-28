@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('ProductsController', ['$scope', '$modal', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles', 
-    function ($scope, $modal, resolvedProducts, Products, resolvedProfiles, Profiles) {
+  .controller('ProductsController', ['$scope', '$modal', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles', '$routeParams',
+    function ($scope, $modal, resolvedProducts, Products, resolvedProfiles, Profiles, $routeParams) {
 
       $scope.products = resolvedProducts;
-     $scope.profiles = resolvedProfiles;
-
+      $scope.profiles = resolvedProfiles;
+      $scope.prod_id = $routeParams.id;
      
       $scope.create = function () {
         $scope.clear();

@@ -64,7 +64,7 @@ $app->post('/sunsetApp/products', function() use($app) {
     echo $products->toJson();    
 });
 
-$app->put('/sunsetApp/products/:prod_id', function($prod_id) use($app) {
+$app->put('/sunsetApp/products/:id', function($prod_id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $products = Products::find($prod_id);

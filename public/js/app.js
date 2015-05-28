@@ -11,7 +11,7 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        controller: 'ProductsController'
 	    })
 	    .when('/sunsetApp/products/:id', {
-	        templateUrl: 'views/product/product.html',
+	        templateUrl: 'views/products/product.html',
 	        controller: 'ProductsController'
 	    })
 	    .when('/sunsetApp/profiles', {
@@ -22,11 +22,11 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	      	templateUrl:"views/wheretobuy/wheretobuy.html",
 	      	controller:"WheretobuyController"
 	    })
-	    .when("//sunsetAppcatalogue",{
+	    .when("/sunsetApp/catalogue",{
 	      	templateUrl:"views/catalogue/catalogue.html",
 	      	controller:"CatalogueController"
 	    })
-	    .when("//sunsetAppcontact",{
+	    .when("/sunsetApp/contact",{
 	      	templateUrl:"views/contact/contact.html",
 	      	controller:"ContactController"
 	    })

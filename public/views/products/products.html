@@ -38,7 +38,7 @@
                 <div class="col-md-11 col-sm-11 col-xs-11"> 
                     <ul class="products-list"> 
                         <li ng-repeat="product in products" ng-if="product.prof_id === profile.id"> 
-                            <a href="#" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
+                            <a href="sunsetApp/products/{{product.id}}" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
                                 <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code | lowercase}}-{{product.code}}.png"> <p> {{profile.name}}-{{product.colour.colour_code}}-{{product.code}}</p>
                             </a>
                             <!--{{product}}<br/>-->
@@ -46,7 +46,7 @@
                                 <p>YO + {{profile.name}}</p>
                                 <img ng-src="images/products/small/{{profile.name | l[owercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}-{{product.code}}.png"> 
                             </a>-->
-                            <a href="products/{{product.id}}" ng-if="profile.name != 'sl2' && profile.name != 'sl4' && profile.name != 'sml' "> 
+                            <a href="/products/{{product.id}}" ng-if="profile.name != 'sl2' && profile.name != 'sl4' && profile.name != 'sml' "> 
                                 <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}.png"> <p>{{profile.name}}-{{product.colour.colour_code}}</p>
                             </a>
                         </li> 

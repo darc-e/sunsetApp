@@ -1,6 +1,9 @@
 <div>
 
     <h2>Product</h2>
-  dododood {{products}}
+   
+    <span ng-repeat="product in products" ng-if="product.id == prod_id">
+   		{{product}}
+	</span>
 
 </div>
