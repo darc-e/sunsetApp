@@ -6,12 +6,8 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/home/home.html', 
 	        controller: 'HomeController'
     	})
-    	.when('/sunsetApp/products', {
+    	.when('/products', {
 	        templateUrl: 'views/products/products.html',
-	        controller: 'ProductsController'
-	    })
-	    .when('/sunsetApp/products/:id', {
-	        templateUrl: 'views/products/product.html',
 	        controller: 'ProductsController'
 	    })
 	    .when('/sunsetApp/profiles', {

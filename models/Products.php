@@ -12,7 +12,10 @@ class Products extends Illuminate\Database\Eloquent\Model {
     public function colour(){
     	return $this->belongsTo('Colours', 'colour_id');
     }
-    public function fraction(){
+    public function height(){
     	return $this->belongsTo('Fractions', 'height_id');
+    }
+    public function rabbet(){
+        return $this->belongsTo('Fractions', 'rabbet');
     }
 }

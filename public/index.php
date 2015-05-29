@@ -39,7 +39,8 @@ $app->get('/', function() use ($app) {
 $app->get('/sunsetApp/products', function() {
     //$products = Products::with('Colour')->get();
     //$profiles = Profiles::all();
-    $products = Products::with('Colour')->get();
+    $products = Products::with( 'Colour', 'Height', 'Rabbet')->get();
+   
     echo $products->toJson();
 
 });

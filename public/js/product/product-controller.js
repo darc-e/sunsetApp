@@ -4,11 +4,6 @@ angular.module('sunsetApp')
   .controller('ProductController', ['$scope', '$modal', 'resolvedProduct', 'Products', '$routeParams',
     function ($scope, $modal, resolvedProduct, Products, $routeParams) {
 
-      //$scope.product = resolvedProduct;
-      
-      //console.log('Parameter' + $routeParams.id + 'Products' + Products);
-
-     
       $scope.create = function () {
         $scope.clear();
         $scope.open();
@@ -68,17 +63,13 @@ angular.module('sunsetApp')
         });
       };
     }])
-  .controller('ProductsSaveController', ['$scope', '$modalInstance', 'products',
+    .controller('ProductsSaveController', ['$scope', '$modalInstance', 'products',
     function ($scope, $modalInstance, products) {
-      $scope.products = products;
-
-      
-
-      $scope.ok = function () {
-        $modalInstance.close($scope.products);
-      };
-
-      $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-      };
+        $scope.products = products;
+        $scope.ok = function () {
+          $modalInstance.close($scope.products);
+        };
+        $scope.cancel = function () {
+          $modalInstance.dismiss('cancel');
+        };
     }]);

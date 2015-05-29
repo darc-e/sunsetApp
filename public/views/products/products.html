@@ -36,6 +36,7 @@
                     <img ng-src="images/products/profile/{{profile.name | lowercase;}}.png"> 
                 </div> 
                 <div class="col-md-11 col-sm-11 col-xs-11"> 
+                    
                     <ul class="products-list"> 
                         <li ng-repeat="product in products" ng-if="product.prof_id === profile.id"> 
                             <a href="sunsetApp/products/{{product.id}}" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">

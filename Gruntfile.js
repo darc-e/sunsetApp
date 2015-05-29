@@ -38,14 +38,14 @@ module.exports = function (grunt) {
     connect: {
       proxies: [
         {
-          context: '/sunsetApp',
-          host: '127.0.0.1',
+          context: '/',
+          host: 'sunset.local',
           https: false,
           changeOrigin: false
         }
       ],
       options: {
-        port: 8080,
+        port: 80,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '127.0.0.1',
         livereload: 35729
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('serve', function (target) {
     grunt.task.run([
       //'copy:dist',
       'configureProxies',
@@ -114,6 +114,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', [
-    'server'
+    'serve'
   ]);
 };
