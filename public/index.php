@@ -37,12 +37,8 @@ $app->get('/', function() use ($app) {
 
 
 $app->get('/sunsetApp/products', function() {
-    //$products = Products::with('Colour')->get();
-    //$profiles = Profiles::all();
     $products = Products::with( 'Colour', 'Height', 'Rabbet')->get();
-   
     echo $products->toJson();
-
 });
 
 $app->get('/sunsetApp/products/:id', function($id) use($app) {
@@ -65,12 +61,12 @@ $app->post('/sunsetApp/products', function() use($app) {
     echo $products->toJson();    
 });
 
-$app->put('/sunsetApp/products/:id', function($prod_id) use($app) {
+$app->put('/sunsetApp/products/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
-    $products = Products::find($prod_id);
+    $products = Products::find($id);
     if (is_null($products)) {
-        $app->response->status(4040);
+        $app->response->status(404);
         $app->stop();
     }
     
@@ -138,6 +134,9 @@ $app->delete('/sunsetApp/profiles/:id', function($id) use($app) {
     $profiles->delete();
     $app->response->status(204);
 });
+
+
+
 
 
 

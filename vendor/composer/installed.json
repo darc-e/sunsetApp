@@ -832,8 +832,8 @@
     },
     {
         "name": "symfony/class-loader",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/ClassLoader",
         "source": {
             "type": "git",
@@ -885,8 +885,8 @@
     },
     {
         "name": "symfony/filesystem",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/Filesystem",
         "source": {
             "type": "git",
@@ -937,8 +937,8 @@
     },
     {
         "name": "symfony/config",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/Config",
         "source": {
             "type": "git",
@@ -990,18 +990,18 @@
     },
     {
         "name": "symfony/console",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/Console",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Console.git",
-            "reference": "2343f6d8026306bd330e0c987e4c102483c213e7"
+            "reference": "b5ec0c11a204718f2b656357f5505a8e578f30dd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/2343f6d8026306bd330e0c987e4c102483c213e7",
-            "reference": "2343f6d8026306bd330e0c987e4c102483c213e7",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/b5ec0c11a204718f2b656357f5505a8e578f30dd",
+            "reference": "b5ec0c11a204718f2b656357f5505a8e578f30dd",
             "shasum": ""
         },
         "require": {
@@ -1018,7 +1018,7 @@
             "symfony/event-dispatcher": "",
             "symfony/process": ""
         },
-        "time": "2015-05-22 14:53:08",
+        "time": "2015-05-29 14:42:58",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1050,8 +1050,8 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/Yaml",
         "source": {
             "type": "git",
@@ -1102,8 +1102,8 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/Finder",
         "source": {
             "type": "git",
@@ -1154,18 +1154,18 @@
     },
     {
         "name": "symfony/translation",
-        "version": "v2.6.8",
-        "version_normalized": "2.6.8.0",
+        "version": "v2.6.9",
+        "version_normalized": "2.6.9.0",
         "target-dir": "Symfony/Component/Translation",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Translation.git",
-            "reference": "d030b3d8d9699795dbf8c59e915ef879007a4483"
+            "reference": "89cdf3c43bc24c85dd8173dfcf5a979a95e5bd9c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Translation/zipball/d030b3d8d9699795dbf8c59e915ef879007a4483",
-            "reference": "d030b3d8d9699795dbf8c59e915ef879007a4483",
+            "url": "https://api.github.com/repos/symfony/Translation/zipball/89cdf3c43bc24c85dd8173dfcf5a979a95e5bd9c",
+            "reference": "89cdf3c43bc24c85dd8173dfcf5a979a95e5bd9c",
             "shasum": ""
         },
         "require": {
@@ -1183,7 +1183,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2015-05-22 14:37:51",
+        "time": "2015-05-29 14:42:58",
         "type": "library",
         "extra": {
             "branch-alias": {

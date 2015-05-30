@@ -14,6 +14,6 @@ return array(
     'Products' => $baseDir . '/models/Products.php',
     'Profiles' => $baseDir . '/models/Profiles.php',
     'Rabbets' => $baseDir . '/models/Rabbets.php',
-    'Test' => $baseDir . '/models/Test.php',
+    'WhereToBuy' => $baseDir . '/models/WhereToBuy.php',
     'Widths' => $baseDir . '/models/Widths.php',
 );

@@ -33,7 +33,7 @@
 			]
 		},
 		{
-			"name": "test",
+			"name": "whereToBuy",
 			"attrs": [
 				{
 					"attrName": "myattr",
@@ -46,7 +46,7 @@
 			]
 		},
 		{
-			"name": "whereToBuy",
+			"name": "catalogue",
 			"attrs": [
 				{
 					"attrName": "myattr",
@@ -54,7 +54,20 @@
 					"minLength": "",
 					"maxLength": "",
 					"enumValues": [],
-					"required": false
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "contact",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
 				}
 			]
 		}
