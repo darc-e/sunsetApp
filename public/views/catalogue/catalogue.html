@@ -1,5 +1,42 @@
-<div class="row container inside-container ng-scope" > 
-    <div class="col-md-12 col-xs-12"> 
-        <p> Catalogue</p> 
-    </div> 
+<div class="row inside-container ng-scope"> 
+	<div class="col-md-5 sun-cat"> 
+		<img src="images/fillers/Catalog_cover.b6233dfb.png"> 
+	</div> 
+	<div class="col-md-4 sun-cat-form"> 
+		<p>Stay up to date with what's new and any special announcemnets bout new item promotions by signing up for our email newsletters.</p> 
+		<div class="panel panel-default login-panel"> 
+			<div class="panel-heading">Sign up for free newsletter</div> 
+			<div class="panel-body"> 
+				<form role="form login-form;" class="ng-pristine ng-valid-email ng-invalid ng-invalid-required">
+				 	<p class="form-group ng-hide" ng-show="createMode"> 
+				 		<label for="loginCompany">Company Name</label> 
+				 		<input id="loginConfirm" required="" name="confirm" type="text" class="form-control" placeholder="Company"> 
+				 	</p> 
+				 	<p class="form-group"> 
+				 		<label for="loginEmail">Email</label> 
+				 		<input id="loginEmail" required="" name="email" type="email" ng-model="email" class="form-control ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" placeholder="Enter email"> 
+				 	</p> 
+				 	<p class="form-group ng-hide" ng-show="createMode"> 
+				 		<label for="loginCompany">Contact Number</label> 
+				 		<input id="loginConfirm" required="" name="confirm" type="tel" class="form-control" placeholder="Phone number"> 
+				 	</p> 
+				 	<p class="form-group"> 
+				 		<label for="loginPass">Password</label> 
+				 		<input id="loginPass" required="" name="pass" type="password" ng-model="pass" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Enter password"> 
+				 	</p> 
+				 	<p class="form-group ng-hide" ng-show="createMode"> 
+				 		<label for="loginConfirm">Confirm Password</label> 
+				 		<input id="loginConfirm" required="" name="confirm" type="password" ng-model="confirm" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Confirm password"> 
+				 	</p> 
+				 	<p> 
+				 		<button class="btn btn-primary" ng-click="passwordLogin(email, pass)" ng-hide="createMode">Log In</button> 
+				 		<button class="btn btn-default" ng-click="createMode = true" ng-hide="createMode">Register</button> 
+				 		<button class="btn btn-primary ng-hide" ng-show="createMode" ng-click="createAccount(email, pass, confirm)">Create Account</button> 
+				 		<button class="btn btn-default ng-hide" ng-show="createMode" ng-click="createMode = false">Cancel</button> 
+				 	</p> 
+				</form> 
+				<p ng-show="err" class="bg-danger ng-binding ng-hide"></p> 
+			</div> 
+		</div>
+	</div>
 </div>

@@ -6,13 +6,19 @@
                 <form> 
                     <div class="form-group"> 
                         <label for="prodProfile">PROFILE #</label> 
-                        <select ng-model="search.profile" ng-options="product.profile for product in products" class="form-control" id="prodProfile"> <option value="">Select All </select> 
+                        <select ng-model="search.profile" ng-options="profile in profiles" class="form-control" id="prodProfile"> 
+                            <option value="{{profiles.name}}">Select All 
+                            <option id = "profiles.Id" value=""></option>
+                        </select> 
+                    </div>
+                    <div class="form-group"> 
                         <label for="prodHeight">PROFILE HEIGHT</label> 
+
                         <select ng-model="search.height" ng-options="i.height for item in products" class="form-control" id="prodHeight"> 
                             <option value="">Select All </option>
-                            <option value="">yo mama is a ho</option>
+                           
                         </select> 
-                    </div> 
+                    </div>
                     <div class="form-group"> 
                         <label for="rabbetWidth">RABBET WIDTH </label> 
                         <select class="form-control" id="rabbetWidth"> 
