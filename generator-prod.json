@@ -34,7 +34,7 @@
 			]
 		},
 		{
-			"name": "fractions",
+			"name": "heights",
 			"attrs": [
 				{
 					"attrName": "myattr",
