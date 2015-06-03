@@ -12,6 +12,9 @@ angular.module('sunsetApp')
           }],
           resolvedProfiles: ['Profiles', function (Profiles) {
             return Profiles.query();
+          }],
+          resolvedHeights: ['Heights', function (Heights) {
+            return Heights.query();
           }]
         }
       })

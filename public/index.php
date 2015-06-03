@@ -135,6 +135,10 @@ $app->delete('/sunsetApp/profiles/:id', function($id) use($app) {
     $app->response->status(204);
 });
 
+$app->get('/sunsetApp/heights', function() {
+    $heights = Heights::all();
+    echo $heights->toJson();
+});
 
 
 

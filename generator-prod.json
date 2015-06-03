@@ -3,8 +3,9 @@
 	"databaseType": "mysql",
 	"hostName": "localhost",
 	"databaseName": "sunset_main",
-	"userName": "root",
-	"password": "",
+	
+	"userName": "sunset_admin",
+	"password": "s7rSh{gb*5p%",
 	"entities": [
 		{
 			"name": "products",
@@ -33,7 +34,7 @@
 			]
 		},
 		{
-			"name": "rabbets",
+			"name": "fractions",
 			"attrs": [
 				{
 					"attrName": "myattr",
@@ -46,20 +47,7 @@
 			]
 		},
 		{
-			"name": "heights",
-			"attrs": [
-				{
-					"attrName": "myattr",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				}
-			]
-		},
-		{
-			"name": "whereToBuy",
+			"name": "wheretobuy",
 			"attrs": [
 				{
 					"attrName": "myattr",

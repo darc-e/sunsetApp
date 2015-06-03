@@ -14,10 +14,16 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/profiles/profiles.html',
 	        controller: 'ProfilesController'
 	    })
+	     .when('/sunsetApp/heights', {
+	     	 templateUrl: 'views/heights/heights.html',
+	        controller: 'HeightsController'
+	    })
+
 	    .when('/sunsetApp/whereToBuy', {
 	        templateUrl: 'views/whereToBuy/whereToBuy.html',
 	        controller: 'WhereToBuyController'
 	    })
+	
 	    .when('/sunsetApp/catalogue', {
 	        templateUrl: 'views/catalogue/catalogue.html',
 	        controller: 'CatalogueController'
