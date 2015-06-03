@@ -3,13 +3,11 @@
         <div class="panel panel-default"> 
             <div class="panel-heading sun-search">Search Products</div> 
             <div class="panel-body"> 
-                
-
                 <form> 
                     <div class="form-group"> 
                         <label for="prodProfile">PROFILE #</label> 
                        
-                       <select  ng-model="search.profile" ng-options="profile.name for profile in profiles" class="form-control"> 
+                       <select  ng-model="searchProfile" ng-options="profile.name for profile in profiles" class="form-control"> 
                             <option value="">Select Profile</option>
                            
                         </select> 
@@ -39,7 +37,7 @@
         </div> 
     </div> 
     <div class="col-md-10 col-sm-8 col-xs-12"> 
-        <ul class="products" ng-repeat=" profile in profiles" ng-if="profile.available === 1"> 
+        <ul class="products" ng-repeat=" profile in profiles | filter: searchProfile.name" ng-if="profile.available === 1"> 
             <li class="row"> 
                 <div class="col-md-1 col-sm-1 col-xs-1"> 
                     <img ng-src="images/products/profile/{{profile.name | lowercase;}}.png"> 

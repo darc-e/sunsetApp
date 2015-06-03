@@ -3783,7 +3783,7 @@ ul.nav.navbar-nav li a:hover:after {
     padding-left: 15px;
     content: "|"
 }
-.main-container .container .inside-container .panel-default .panel-heading.sun-search:after {
+.main-container .container .inside-container .panel-default .panel-heading.ch:after {
     border: 0
 }
 .main-container .container .inside-container .panel-default .panel-body {
@@ -3833,7 +3833,7 @@ ul.nav.navbar-nav li a:hover:after {
     padding-left: 10px
 }
 .inside-container.product-list {
-    background: url(../images/fillers/Girl1.png)12% 100% no-repeat fixed
+    /*background: url(../images/fillers/Girl1.png)12% 100% no-repeat fixed*/
 }
 .nav-banner {
     background: #4d4d4d;
