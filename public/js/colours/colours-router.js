@@ -3,13 +3,10 @@
 angular.module('sunsetApp')
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when('/profiles', {
-        templateUrl: 'views/profiles/profiles.html',
-        controller: 'ProfilesController',
+      .when('/colours', {
+        templateUrl: 'views/colours/colours.html',
+        controller: 'ColoursController',
         resolve:{
-          resolvedProfiles: ['Profiles', function (Profiles) {
-            return Profiles.query();
-          }],
           resolvedColours: ['Colours', function (Colours) {
             return Colours.query();
           }]

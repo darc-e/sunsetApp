@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('ProfilesController', ['$scope', '$modal', 'resolvedProfiles', 'Profiles',
-    function ($scope, $modal, resolvedProfiles, Profiles) {
+  .controller('ProfilesController', ['$scope', '$modal', 'resolvedProfiles', 'Profiles', 'resolvedColours', 'Colours',
+    function ($scope, $modal, resolvedProfiles, Profiles, resolvedColours, Colours) {
 
       $scope.profiles = resolvedProfiles;
-
+      $scope.colours = resolvedColours;
       $scope.create = function () {
         $scope.clear();
         $scope.open();

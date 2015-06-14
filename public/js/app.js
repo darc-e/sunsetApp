@@ -6,7 +6,7 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/home/home.html', 
 	        controller: 'HomeController'
     	})
-    	.when('/products', {
+    	.when('/sunsetApp/products', {
 	        templateUrl: 'views/products/products.html',
 	        controller: 'ProductsController'
 	    })
@@ -17,6 +17,10 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	     .when('/sunsetApp/heights', {
 	     	 templateUrl: 'views/heights/heights.html',
 	        controller: 'HeightsController'
+	    })
+	     .when('/sunsetApp/colours', {
+	     	 templateUrl: 'views/colours/colours.html',
+	        controller: 'ColoursController'
 	    })
 
 	    .when('/sunsetApp/whereToBuy', {
