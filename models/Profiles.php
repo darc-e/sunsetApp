@@ -12,8 +12,8 @@ class Profiles extends Illuminate\Database\Eloquent\Model {
         return $this->hasMany('Products', 'prof_id');
     }
     
-     public function colours()
+    public function colours()
     {
-    	return $this->hasManyThrough('Products', 'Colours', 'prof_id', 'colour_id');
+        return $this->hasManyThrough('Colours', 'Products', 'prof_id', 'id');
     }
 }

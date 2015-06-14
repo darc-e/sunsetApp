@@ -1,6 +1,6 @@
 // Declare app level module which depends on filters, and services
 angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date', 'angular.filter'])
-  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider',  function ($routeProvider, $locationProvider) {
     $routeProvider
       	.when('/', {
 	        templateUrl: 'views/home/home.html', 
