@@ -13,7 +13,7 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
 	'driver'    => 'mysql',
-	'host'      => '127.0.0.1',
+	'host'      => 'localhost',
 	'database'  => 'database',
 	'username'  => 'root',
 	'password'  => 'password',
@@ -34,7 +34,7 @@ $capsule->setAsGlobal();
 $capsule->bootEloquent();
 ```
 
-> `composer require "illuminate/events=5.0.*"` required when you need to use observers with Eloquent.
+> `composer require "illuminate/events"` required when you need to use observers with Eloquent.
 
 Once the Capsule instance has been registered. You may use it like so:
 
