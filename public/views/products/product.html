@@ -5,8 +5,8 @@
 	   			<div class="row productInfo"> 
 					<div class="col-md-12 col-xs-12"> 
 						<p> 
-							<span class="highlight">PRODUCTSzzzzzz </span> 
-							<b>[ {{profile.name}}-{{product.colour.colour_code}} ]</b> 
+							<span class="highlight">PRODUCTS </span> 
+							<b>[ {{profile.name}}-{{product.colour_id}} ]</b> 
 						</p>
 					</div> 
 				</div> 
@@ -18,7 +18,7 @@
 									<img ng-src="images/products/measurements/{{profile.name | lowercase}}.png"> 
 								</div> 
 								<div class="col-md-7 product-img"> 
-									<img ng-src="images/products/large/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}.png"> 
+									<img ng-src="images/products/large/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour_id}}.png"> 
 								</div> 
 								<div class="col-md-1" style="text-align:right"> 
 									<div class="checkbox" style="margin: 0"> 

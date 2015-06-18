@@ -38,7 +38,9 @@ $app->get('/', function() use ($app) {
 
 $app->get('/sunsetApp/products', function() {
     $products = Products::with( 'Rabbet', 'Colour', 'Height', 'Profile')->get();
-    echo $products->toJson();
+   
+    $heights = Heights::with( 'Fraction')->get();
+     echo $products->toJson();
 });
 
 $app->get('/sunsetApp/products/:id', function($id) use($app) {
@@ -87,7 +89,7 @@ $app->delete('/sunsetApp/products/:id', function($id) use($app) {
 
 
 $app->get('/sunsetApp/profiles', function() {
-    $profiles = Profiles::with('Products', 'Colours')->get();
+    $profiles = Profiles::with('Products')->get();
     
     echo $profiles->toJson();
 });
@@ -188,7 +190,7 @@ $app->delete('/sunsetApp/rabbets/:id', function($id) use($app) {
 
 
 $app->get('/sunsetApp/heights', function() {
-    $heights = Heights::all();
+    $heights = Heights::with('Fraction')->get();
     echo $heights->toJson();
 });
 

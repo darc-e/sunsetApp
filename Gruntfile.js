@@ -40,15 +40,15 @@ module.exports = function (grunt) {
         {
           context: 'sunset.local/',
           host: 'sunset.local',
-           port: 8,
+           port: 8080,
           https: false,
           changeOrigin: false
         }
       ],
       options: {
-        port: 80,
+        port: 8042,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'sunset.local/',
+        hostname: '127.0.0.1',
         livereload: 35729
       },
       livereload: {

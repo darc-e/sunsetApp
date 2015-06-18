@@ -10,5 +10,8 @@ class Fractions extends Illuminate\Database\Eloquent\Model {
     {
         return $this->belongsToMany('Products', 'height_id' );
     }
-    
+    public function heights()
+    {
+        return $this->belongsToMany('Heights', 'id' );
+    }
 }

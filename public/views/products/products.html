@@ -1,5 +1,5 @@
 <div class="row container inside-container product-list"> 
-{{profiles}}
+
     <div class="col-md-2 col-sm-3 col-xs-12"> 
         <div class="panel panel-default"> 
             <div class="panel-heading sun-search">Search Products</div> 
@@ -16,7 +16,7 @@
                    <div class="form-group"> 
                         <label for="prodHeight">PROFILE HEIGHT</label> 
 
-                        <select ng-model="searchHeight" ng-options="height.id for height in heights | orderBy:'dec'" class="form-control" > 
+                        <select ng-model="searchHeight" ng-options="height.fraction_id as height.fraction.fraction for height in heights track by height.id" class="form-control" > 
                             <option value="">Select Height </option>
                            
                         </select> 
@@ -29,9 +29,7 @@
                     </div> 
                     <div class="form-group"> 
                         <label for="prodColour">PROFILE FINISH</label> 
-                        <select ng-model="search.finish" ng-options="product.colour for product in products" class="form-control" id="prodColour"> 
-                            <option value="">Select All </option>
-                        </select> 
+                       
                     </div> 
                 </form> 
             </div> 
@@ -46,9 +44,9 @@
                 <div class="col-md-11 col-sm-11 col-xs-11"> 
                     
                     <ul class="products-list" > 
-                        <li id="product_list" ng-repeat="product in products | filter: searchHeight.fraction : true" ng-if="product.prof_id === profile.id"> 
+                        <li id="product_list" ng-repeat="product in profile.products  | filter: searchHeight.id"> 
                             <a href="sunsetApp/products/{{product.id}}" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
-                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code | lowercase}}-{{product.code}}.png"> <p> {{profile.name}}-{{product.colour.colour_code}}-{{product.code}}</p>
+                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour_id | lowercase}}-{{product.code | lowercase}}.png"> <p> {{profile.name}}-{{product.colour_id}}-{{product.code}}</p>
                             </a>
                             <!--{{product}}<br/>-->
                             <!--<a href="#" ng-if="proflie.name === 'sl2' || proflie.name === 'sl4' || profile.name === 'sml' ">
@@ -56,7 +54,7 @@
                                 <img ng-src="images/products/small/{{profile.name | l[owercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}-{{product.code}}.png"> 
                             </a>-->
                             <a href="/products/{{product.id}}" ng-if="profile.name != 'sl2' && profile.name != 'sl4' && profile.name != 'sml' "> 
-                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour.colour_code}}.png"> <p>{{profile.name}}-{{product.colour.colour_code}}-{{product.height.id}}</p>
+                                <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour_id}}.png"> <p>{{profile.name}}-{{product.colour_id}}-{{product.height_id}}</p>
                             </a>
                         </li> 
                     </ul> 
