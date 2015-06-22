@@ -1,1 +1,50 @@
-guighflhg
+<div class="row product-details inside-container" > 
+
+	<div class="col-md-12 col-xs-12" ng-model="productsList"> 
+	   	
+	    	
+		<div class="row productInfo"> 
+			<div class="col-md-12 col-xs-12"> 
+				<p> 
+					<span class="highlight">SELECTED PRODUCTS</span> 
+				</p>
+			</div> 
+		</div> 
+		<div class="row" > 
+			<div class="col-md-6 col-xs-6"  ng-repeat="product in productsList"> 
+				<div class="well"> 
+					<div class="row "> 
+						<div class="col-md-12 details-small-info"> 
+							<p>Item #:  {{product.profile.name}}-{{product.colour_id}} / Width: {{product.width}} / Height: {{product.height.fraction}} / Rabbet: {{product.rabbet.fraction}}</p> 
+							<p>Profile Finish: {{product.colour.colour}} / Profile Type: N/A</p> 
+						</div> 
+					</div> 
+					<div class="row"> 
+						<div class="col-md-4 profile-img"> 
+							<img ng-src="images/products/measurements/{{product.profile.name | lowercase}}.png"> 
+						</div> 
+						<div class="col-md-8 product-img"> 
+							<img ng-src="images/products/large/{{product.profile.name | lowercase}}/{{product.profile.name | lowercase}}-{{product.colour_id}}.png"> 
+						</div> 
+					</div> 
+					<div class="row details-info"> 
+						<div class="col-md-4"> 
+							<p class="details-price highlight "><strong>${{product.list_price.toFixed(2)}}</strong></p> 
+							<p>per sq foot</p> 	
+						</div> 
+					</div> 
+				</div> 
+			</div> 
+
+		</div> 
+		<div class="row" > 
+			<div class="col-md-6 col-xs-6"> 
+				<button type="button" class="btn btn-default" ng-click="goBackToProducts()"> 
+					<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> 
+					Back To Products
+				</button> 
+			</div>	
+		</div>
+	</div>
+
+</div>

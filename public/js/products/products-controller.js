@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('ProductsController', ['$rootScope', '$scope', '$modal', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles','resolvedHeights', 'Heights', '$routeParams', 
-    function ($rootScope, $scope, $modal, resolvedProducts, Products, resolvedProfiles, Profiles, resolvedHeights, Heights, $routeParams) {
+  .controller('ProductsController', ['$rootScope', '$scope', '$modal', '$location', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles','resolvedHeights', 'Heights', '$routeParams', 
+    function ($rootScope, $scope, $modal, $location, resolvedProducts, Products, resolvedProfiles, Profiles, resolvedHeights, Heights, $routeParams) {
 
       $scope.products = resolvedProducts;
       //$scope.products =  _.groupBy($scope.products, 'prof_id');
       $scope.profiles = resolvedProfiles;
       $scope.heights = resolvedHeights;
       $scope.prod_id = $routeParams.id;
-      $scope.productsList = [];
+     
 
      
       $scope.create = function () {
@@ -76,10 +76,9 @@ angular.module('sunsetApp')
       };
 
       $scope.yellOut = function(prod){
-         
-       
-         $scope.productsList .push(prod); 
-        
+         $scope.productsList.push(prod); 
+         $rootScope.productsList = angular.copy($scope.productsList);
+         $location.path('productsList');
          console.log ($scope.productsList);
       };
     }])

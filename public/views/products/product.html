@@ -6,7 +6,7 @@
 	   			<div class="row productInfo"> 
 					<div class="col-md-12 col-xs-12"> 
 						<p> 
-							<span class="highlight">PRODUCTS dsds</span> 
+							<span class="highlight">PRODUCT</span> 
 							<b>[ {{product.profile.name}}-{{product.colour_id}} ]</b> 
 						</p>
 					</div> 
@@ -26,7 +26,7 @@
 							</div> 
 							<div class="row details-info"> 
 								<div class="col-md-4"> 
-									<p>Item #:</p> 
+									<p>Profile #:</p> 
 									<p><strong>{{product.profile.name | uppercase}}</strong></p> 
 								</div> 
 								<div class="col-md-4"> 
@@ -58,7 +58,7 @@
 								</div> 
 								<div class="col-md-4"> 
 									<p>Type:</p> 
-									<p><strong>{{product.rabbet.fraction}}"</strong></p> 
+									<p><strong>N/A</strong></p> 
 								</div> 
 								<div class="col-md-4"> 
 									<p>Box quantity:</p> 
@@ -67,13 +67,13 @@
 							</div> 
 							<div class="row details-buttons"> 
 								<div class="col-md-6"> 
-									<button type="button" class="btn btn-default"> 
+									<button type="button" class="btn btn-default" ng-click="goBack()"> 
 										<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> 
 										Back 
 									</button> 
 								</div> 
 								<div class="col-md-6"> 
-									<button type="button" class="btn btn-primary" ng-click="yellOut(product)"> SEND ME A SAMPLE 
+									<button type="button" class="btn btn-primary" ng-click="yellOut(product)"> Add To  Sample List
 										<i class="fa fa-caret-right"></i>
 									</button> 
 								</div> 

@@ -4097,9 +4097,15 @@ ul.products li.row ul.products-list li p.ng-binding {
 .details-price .highlight {
     color: #fe0000
 }
+.highlight {
+    color: #fe0000;
+}
 .details-price p {
     margin-left: 15px;
     margin-bottom: -4px
+}
+.details-small-info{
+    font-size: 12px;
 }
 .productInfo {
     border-top: 1px solid #000;
