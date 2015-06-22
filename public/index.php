@@ -9,7 +9,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      => 'localhost',
-    'database'  => 'darcyg_sunset_main',
+    'database'  => 'sunset_main',
     'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',
@@ -36,14 +36,14 @@ $app->get('/', function() use ($app) {
 });
 
 
-$app->get('/products', function() {
+$app->get('/sunsetApp/products', function() {
     $products = Products::with( 'Rabbet', 'Colour', 'Height', 'Profile')->get();
    
     $heights = Heights::with( 'Fraction')->get();
      echo $products->toJson();
 });
 
-$app->get('/products/:id', function($id) use($app) {
+$app->get('/sunsetApp/products/:id', function($id) use($app) {
     $products = Products::find($id);
     if (is_null($products)) {
         $app->response->status(404);
@@ -52,7 +52,7 @@ $app->get('/products/:id', function($id) use($app) {
     echo $products->toJson();    
 });
 
-$app->post('/products', function() use($app) {
+$app->post('/sunsetApp/products', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $products = new Products;
@@ -63,7 +63,7 @@ $app->post('/products', function() use($app) {
     echo $products->toJson();    
 });
 
-$app->put('/products/:id', function($id) use($app) {
+$app->put('/sunsetApp/products/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $products = Products::find($id);
@@ -77,7 +77,7 @@ $app->put('/products/:id', function($id) use($app) {
     echo $products->toJson();    
 });
 
-$app->delete('/products/:id', function($id) use($app) {
+$app->delete('/sunsetApp/products/:id', function($id) use($app) {
     $products = Products::find($id);
     if (is_null($products)) {
         $app->response->status(404);
@@ -88,13 +88,13 @@ $app->delete('/products/:id', function($id) use($app) {
 });
 
 
-$app->get('/profiles', function() {
+$app->get('/sunsetApp/profiles', function() {
     $profiles = Profiles::with('Products')->get();
     
     echo $profiles->toJson();
 });
 
-$app->get('/profiles/:id', function($id) use($app) {
+$app->get('/sunsetApp/profiles/:id', function($id) use($app) {
     $profiles = Profiles::find($id);
     if (is_null($profiles)) {
         $app->response->status(404);
@@ -103,7 +103,7 @@ $app->get('/profiles/:id', function($id) use($app) {
     echo $profiles->toJson();    
 });
 
-$app->post('/profiles', function() use($app) {
+$app->post('/sunsetApp/profiles', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $profiles = new Profiles;
@@ -114,7 +114,7 @@ $app->post('/profiles', function() use($app) {
     echo $profiles->toJson();    
 });
 
-$app->put('/profiles/:id', function($id) use($app) {
+$app->put('/sunsetApp/profiles/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $profiles = Profiles::find($id);
@@ -128,7 +128,7 @@ $app->put('/profiles/:id', function($id) use($app) {
     echo $profiles->toJson();    
 });
 
-$app->delete('/profiles/:id', function($id) use($app) {
+$app->delete('/sunsetApp/profiles/:id', function($id) use($app) {
     $profiles = Profiles::find($id);
     if (is_null($profiles)) {
         $app->response->status(404);
@@ -139,7 +139,7 @@ $app->delete('/profiles/:id', function($id) use($app) {
 });
 
 
-$app->get('/rabbets', function() {
+$app->get('/sunsetApp/rabbets', function() {
     $rabbets = Rabbets::all();
     echo $rabbets->toJson();
 });
@@ -153,7 +153,7 @@ $app->get('/rabbets/:id', function($id) use($app) {
     echo $rabbets->toJson();    
 });
 
-$app->post('/rabbets', function() use($app) {
+$app->post('/sunsetApp/rabbets', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $rabbets = new Rabbets;
@@ -164,7 +164,7 @@ $app->post('/rabbets', function() use($app) {
     echo $rabbets->toJson();    
 });
 
-$app->put('/rabbets/:id', function($id) use($app) {
+$app->put('/sunsetApp/rabbets/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $rabbets = Rabbets::find($id);
@@ -178,7 +178,7 @@ $app->put('/rabbets/:id', function($id) use($app) {
     echo $rabbets->toJson();    
 });
 
-$app->delete('/rabbets/:id', function($id) use($app) {
+$app->delete('/sunsetApp/rabbets/:id', function($id) use($app) {
     $rabbets = Rabbets::find($id);
     if (is_null($rabbets)) {
         $app->response->status(404);
@@ -189,12 +189,12 @@ $app->delete('/rabbets/:id', function($id) use($app) {
 });
 
 
-$app->get('/heights', function() {
+$app->get('/sunsetApp/heights', function() {
     $heights = Heights::with('Fraction')->get();
     echo $heights->toJson();
 });
 
-$app->get('/heights/:id', function($id) use($app) {
+$app->get('/sunsetApp/heights/:id', function($id) use($app) {
     $heights = Heights::find($id);
     if (is_null($heights)) {
         $app->response->status(404);
@@ -203,7 +203,7 @@ $app->get('/heights/:id', function($id) use($app) {
     echo $heights->toJson();    
 });
 
-$app->post('/heights', function() use($app) {
+$app->post('/sunsetApp/heights', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $heights = new Heights;
@@ -214,7 +214,7 @@ $app->post('/heights', function() use($app) {
     echo $heights->toJson();    
 });
 
-$app->put('/heights/:id', function($id) use($app) {
+$app->put('/sunsetApp/heights/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $heights = Heights::find($id);
@@ -228,7 +228,7 @@ $app->put('/heights/:id', function($id) use($app) {
     echo $heights->toJson();    
 });
 
-$app->delete('/heights/:id', function($id) use($app) {
+$app->delete('/sunsetApp/heights/:id', function($id) use($app) {
     $heights = Heights::find($id);
     if (is_null($heights)) {
         $app->response->status(404);
@@ -239,12 +239,12 @@ $app->delete('/heights/:id', function($id) use($app) {
 });
 
 
-$app->get('/colours', function() {
+$app->get('/sunsetApp/colours', function() {
     $colours = Colours::all();
     echo $colours->toJson();
 });
 
-$app->get('/colours/:id', function($id) use($app) {
+$app->get('/sunsetApp/colours/:id', function($id) use($app) {
     $colours = Colours::find($id);
     if (is_null($colours)) {
         $app->response->status(404);
@@ -253,7 +253,7 @@ $app->get('/colours/:id', function($id) use($app) {
     echo $colours->toJson();    
 });
 
-$app->post('/colours', function() use($app) {
+$app->post('//sunsetApp/colours', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $colours = new Colours;
@@ -264,7 +264,7 @@ $app->post('/colours', function() use($app) {
     echo $colours->toJson();    
 });
 
-$app->put('/colours/:id', function($id) use($app) {
+$app->put('/sunsetApp/colours/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $colours = Colours::find($id);
@@ -278,7 +278,7 @@ $app->put('/colours/:id', function($id) use($app) {
     echo $colours->toJson();    
 });
 
-$app->delete('/colours/:id', function($id) use($app) {
+$app->delete('/sunsetApp/colours/:id', function($id) use($app) {
     $colours = Colours::find($id);
     if (is_null($colours)) {
         $app->response->status(404);
@@ -289,12 +289,12 @@ $app->delete('/colours/:id', function($id) use($app) {
 });
 
 
-$app->get('/wheretobuys', function() {
+$app->get('/sunsetApp/wheretobuys', function() {
     $wheretobuys = WhereToBuy::all();
     echo $wheretobuys->toJson();
 });
 
-$app->get('/wheretobuys/:id', function($id) use($app) {
+$app->get('/sunsetApp/wheretobuys/:id', function($id) use($app) {
     $whereToBuy = WhereToBuy::find($id);
     if (is_null($whereToBuy)) {
         $app->response->status(404);
@@ -303,7 +303,7 @@ $app->get('/wheretobuys/:id', function($id) use($app) {
     echo $whereToBuy->toJson();    
 });
 
-$app->post('/wheretobuys', function() use($app) {
+$app->post('/sunsetApp/wheretobuys', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $whereToBuy = new WhereToBuy;
@@ -314,7 +314,7 @@ $app->post('/wheretobuys', function() use($app) {
     echo $whereToBuy->toJson();    
 });
 
-$app->put('/wheretobuys/:id', function($id) use($app) {
+$app->put('/sunsetApp/wheretobuys/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $whereToBuy = WhereToBuy::find($id);
@@ -328,7 +328,7 @@ $app->put('/wheretobuys/:id', function($id) use($app) {
     echo $whereToBuy->toJson();    
 });
 
-$app->delete('/wheretobuys/:id', function($id) use($app) {
+$app->delete('/sunsetApp/wheretobuys/:id', function($id) use($app) {
     $whereToBuy = WhereToBuy::find($id);
     if (is_null($whereToBuy)) {
         $app->response->status(404);
@@ -339,12 +339,12 @@ $app->delete('/wheretobuys/:id', function($id) use($app) {
 });
 
 
-$app->get('/catalogues', function() {
+$app->get('/sunsetApp/catalogues', function() {
     $catalogues = Catalogue::all();
     echo $catalogues->toJson();
 });
 
-$app->get('/catalogues/:id', function($id) use($app) {
+$app->get('/sunsetApp/catalogues/:id', function($id) use($app) {
     $catalogue = Catalogue::find($id);
     if (is_null($catalogue)) {
         $app->response->status(404);
@@ -353,7 +353,7 @@ $app->get('/catalogues/:id', function($id) use($app) {
     echo $catalogue->toJson();    
 });
 
-$app->post('/catalogues', function() use($app) {
+$app->post('/sunsetApp/catalogues', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $catalogue = new Catalogue;
@@ -364,7 +364,7 @@ $app->post('/catalogues', function() use($app) {
     echo $catalogue->toJson();    
 });
 
-$app->put('/catalogues/:id', function($id) use($app) {
+$app->put('/sunsetApp/catalogues/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $catalogue = Catalogue::find($id);
@@ -378,7 +378,7 @@ $app->put('/catalogues/:id', function($id) use($app) {
     echo $catalogue->toJson();    
 });
 
-$app->delete('/catalogues/:id', function($id) use($app) {
+$app->delete('/sunsetApp/catalogues/:id', function($id) use($app) {
     $catalogue = Catalogue::find($id);
     if (is_null($catalogue)) {
         $app->response->status(404);
@@ -389,12 +389,12 @@ $app->delete('/catalogues/:id', function($id) use($app) {
 });
 
 
-$app->get('/contacts', function() {
+$app->get('/sunsetApp/contacts', function() {
     $contacts = Contact::all();
     echo $contacts->toJson();
 });
 
-$app->get('/contacts/:id', function($id) use($app) {
+$app->get('/sunsetApp/contacts/:id', function($id) use($app) {
     $contact = Contact::find($id);
     if (is_null($contact)) {
         $app->response->status(404);
@@ -403,7 +403,7 @@ $app->get('/contacts/:id', function($id) use($app) {
     echo $contact->toJson();    
 });
 
-$app->post('/contacts', function() use($app) {
+$app->post('/sunsetApp/contacts', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $contact = new Contact;
@@ -414,7 +414,7 @@ $app->post('/contacts', function() use($app) {
     echo $contact->toJson();    
 });
 
-$app->put('/contacts/:id', function($id) use($app) {
+$app->put('/sunsetApp/contacts/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $contact = Contact::find($id);
@@ -428,7 +428,7 @@ $app->put('/contacts/:id', function($id) use($app) {
     echo $contact->toJson();    
 });
 
-$app->delete('/contacts/:id', function($id) use($app) {
+$app->delete('/sunsetApp/contacts/:id', function($id) use($app) {
     $contact = Contact::find($id);
     if (is_null($contact)) {
         $app->response->status(404);
@@ -438,7 +438,7 @@ $app->delete('/contacts/:id', function($id) use($app) {
     $app->response->status(204);
 });
 ////
-$app->get('/productsList', function() {
+$app->get('/sunsetApp/productsList', function() {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $productsList = new Contact;
@@ -449,23 +449,23 @@ $app->get('/productsList', function() {
     echo $productsList->toJson();    
 });
 
-$app->get('/productsList/:id', function($id) use($app) {
+$app->get('/sunsetApp/productsList/:id', function($id) use($app) {
   
 });
 
-$app->post('/productsList', function() use($app) {
+$app->post('/sunsetApp/productsList', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     
 });
 
-$app->put('/productsList/:id', function($id) use($app) {
+$app->put('/sunsetApp/productsList/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
      
 });
 
-$app->delete('/productsList/:id', function($id) use($app) {
+$app->delete('/sunsetApp/productsList/:id', function($id) use($app) {
     
     $app->response->status(204);
 });
