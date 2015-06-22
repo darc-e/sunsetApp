@@ -12,6 +12,7 @@ return array(
     'Members' => $baseDir . '/models/Members.php',
     'Product' => $baseDir . '/models/Product.php',
     'Products' => $baseDir . '/models/Products.php',
+    'ProductsList' => $baseDir . '/models/ProductList.php',
     'Profiles' => $baseDir . '/models/Profiles.php',
     'Rabbets' => $baseDir . '/models/Rabbets.php',
     'WhereToBuy' => $baseDir . '/models/WhereToBuy.php',

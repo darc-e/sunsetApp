@@ -62,6 +62,10 @@ angular.module('sunsetApp')
           $scope.save(id);
         });
       };
+       $scope.yellout = function (prod) {
+  
+            console.log('Come on');
+      };
     }])
     .controller('ProductsSaveController', ['$scope', '$modalInstance', 'products',
     function ($scope, $modalInstance, products) {

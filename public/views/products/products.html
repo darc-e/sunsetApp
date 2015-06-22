@@ -8,7 +8,7 @@
                     <div class="form-group"> 
                         <label for="prodProfile">PROFILE #</label> 
                        
-                       <select  ng-model="searchProfile" ng-options="profile.name for profile in profiles" class="form-control"> 
+                       <select  data-ng-model="searchProfile" ng-options="profile.name for profile in profiles" class="form-control"> 
                             <option value="">Select Profile</option>
                            
                         </select> 
@@ -16,7 +16,7 @@
                    <div class="form-group"> 
                         <label for="prodHeight">PROFILE HEIGHT</label> 
 
-                        <select ng-model="searchHeight" ng-options="height.fraction_id as height.fraction.fraction for height in heights track by height.id" class="form-control" > 
+                        <select data-ng-model="searchHeight" ng-options="height.fraction.fraction for height in heights track by height.id" class="form-control" > 
                             <option value="">Select Height </option>
                            
                         </select> 
@@ -44,7 +44,8 @@
                 <div class="col-md-11 col-sm-11 col-xs-11"> 
                     
                     <ul class="products-list" > 
-                        <li id="product_list" ng-repeat="product in profile.products  | filter: searchHeight.id"> 
+                        <li id="product_list" ng-repeat="product in profile.products  | filter: searchHeight.id :true"> 
+                        {{searchHeight.id}} <br/>
                             <a href="sunsetApp/products/{{product.id}}" ng-if="profile.name == 'sl2' || profile.name == 'sl4' || profile.name == 'sml' ">
                                 <img ng-src="images/products/small/{{profile.name | lowercase}}/{{profile.name | lowercase}}-{{product.colour_id | lowercase}}-{{product.code | lowercase}}.png"> <p> {{profile.name}}-{{product.colour_id}}-{{product.code}}</p>
                             </a>

@@ -10,6 +10,7 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/products/products.html',
 	        controller: 'ProductsController'
 	    })
+	    
 	    .when('/sunsetApp/profiles', {
 	        templateUrl: 'views/profiles/profiles.html',
 	        controller: 'ProfilesController'

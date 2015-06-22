@@ -34,4 +34,9 @@ angular.module('sunsetApp')
           }]
         }
       })
+      .when('/products/productsList', {
+        templateUrl: 'views/products/productsList.html',
+        controller: 'ProductsController'
+        
+      })
     }]);

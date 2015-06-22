@@ -1,14 +1,16 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('ProductsController', ['$scope', '$modal', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles','resolvedHeights', 'Heights', '$routeParams', 
-    function ($scope, $modal, resolvedProducts, Products, resolvedProfiles, Profiles, resolvedHeights, Heights, $routeParams) {
+  .controller('ProductsController', ['$rootScope', '$scope', '$modal', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles','resolvedHeights', 'Heights', '$routeParams', 
+    function ($rootScope, $scope, $modal, resolvedProducts, Products, resolvedProfiles, Profiles, resolvedHeights, Heights, $routeParams) {
 
       $scope.products = resolvedProducts;
       //$scope.products =  _.groupBy($scope.products, 'prof_id');
       $scope.profiles = resolvedProfiles;
       $scope.heights = resolvedHeights;
       $scope.prod_id = $routeParams.id;
+      $scope.productsList = [];
+
      
       $scope.create = function () {
         $scope.clear();
@@ -68,6 +70,18 @@ angular.module('sunsetApp')
           $scope.save(id);
         });
       };
+
+      $scope.searchProducts = function(text){
+         console.log('somesome');
+      };
+
+      $scope.yellOut = function(prod){
+         
+       
+         $scope.productsList .push(prod); 
+        
+         console.log ($scope.productsList);
+      };
     }])
   .controller('ProductsSaveController', ['$scope', '$modalInstance', 'products',
     function ($scope, $modalInstance, products) {
@@ -82,4 +96,5 @@ angular.module('sunsetApp')
       $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
       };
-    }]);
+    }])
+  ;

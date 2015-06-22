@@ -437,6 +437,55 @@ $app->delete('/sunsetApp/contacts/:id', function($id) use($app) {
     $contact->delete();
     $app->response->status(204);
 });
+////
+$app->get('/sunsetApp/productsList', function() {
+    $contacts = ProductsList::all();
+    echo $contacts->toJson();
+});
+
+$app->get('/sunsetApp/productsList/:id', function($id) use($app) {
+    $contact = ProductsList::find($id);
+    if (is_null($contact)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    echo $contact->toJson();    
+});
+
+$app->post('/sunsetApp/productsList', function() use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $contact = new ProductsList;
+    
+    $contact->myattr = $obj->{'myattr'};
+    $contact->save();
+    $app->response->status(201);
+    echo $contact->toJson();    
+});
+
+$app->put('/sunsetApp/productsList/:id', function($id) use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $contact = ProductsList::find($id);
+    if (is_null($contact)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    
+    $contact->myattr = $obj->{'myattr'};
+    $contact->save();
+    echo $contact->toJson();    
+});
+
+$app->delete('/sunsetApp/productsList/:id', function($id) use($app) {
+    $contact = ProductsList::find($id);
+    if (is_null($contact)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    $contact->delete();
+    $app->response->status(204);
+});
 
 
 

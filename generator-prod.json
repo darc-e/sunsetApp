@@ -97,6 +97,19 @@
 					"required": true
 				}
 			]
+		},
+		{
+			"name": "productsList",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
 		}
 	],
 	"composer": false
