@@ -16,34 +16,34 @@
 						<div class="well"> 
 						
 							<div class="row"> 
-								<div class="col-md-4 profile-img"> 
+								<div class="col-md-4 col-xs-4 profile-img"> 
 									<img ng-src="images/products/measurements/{{product.profile.name | lowercase}}.png"> 
 								</div> 
-								<div class="col-md-8 product-img"> 
+								<div class="col-md-8 col-xs-8 product-img"> 
 									<img ng-src="images/products/large/{{product.profile.name | lowercase}}/{{product.profile.name | lowercase}}-{{product.colour_id}}.png"> 
 								</div> 
 								
 							</div> 
 							<div class="row details-info"> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Profile #:</p> 
 									<p><strong>{{product.profile.name | uppercase}}</strong></p> 
 								</div> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Height:</p> 
 									<p><strong>{{product.height.fraction}}"</strong></p> 
 								</div> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Price per foot</p> 
 									<p><strong>{{product.list_price.toFixed(2)}}</strong></p> 
 								</div> 
 							</div> 
 							<div class="row details-info"> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Width:</p> 
 									<p><strong>{{product.width}}"</strong></p> 
 								</div> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Rabbet:</p> 
 									<p><strong>{{product.rabbet.fraction}}"</strong></p> 
 								</div> 
@@ -52,27 +52,27 @@
 								</div> 
 							</div> 
 							<div class="row details-info"> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Finish:</p> 
 									<p><strong>{{product.colour.colour | uppercase}}</strong></p> 
 								</div> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Type:</p> 
 									<p><strong>N/A</strong></p> 
 								</div> 
-								<div class="col-md-4"> 
+								<div class="col-md-4 col-xs-4"> 
 									<p>Box quantity:</p> 
 									<p><strong>{{product.qty}}</strong></p> 
 								</div> 
 							</div> 
 							<div class="row details-buttons"> 
-								<div class="col-md-6"> 
+								<div class="col-md-6 col-xs-6"> 
 									<button type="button" class="btn btn-default" ng-click="goBack()"> 
 										<span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> 
 										Back 
 									</button> 
 								</div> 
-								<div class="col-md-6"> 
+								<div class="col-md-6 col-xs-6"> 
 									<button type="button" class="btn btn-primary" ng-click="yellOut(product)"> Add To  Sample List
 										<i class="fa fa-caret-right"></i>
 									</button> 
@@ -87,7 +87,7 @@
 		</span>
 		
 	</div>
-	<div class="col-md-6 hidden-sm hidden-xs product-guy"> 
+	<div class="col-md-6   hidden-sm hidden-xs product-guy"> 
 						<img src="images/fillers/Standing_guy.png"> 
 					</div> 
 </div>

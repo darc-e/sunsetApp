@@ -11,24 +11,24 @@
 			</div> 
 		</div> 
 		<div class="row" > 
-			<div class="col-md-6 col-xs-6"  ng-repeat="product in productsList"> 
+			<div class="col-md-6 col-xs-12"  ng-repeat="product in productsList"> 
 				<div class="well"> 
 					<div class="row "> 
-						<div class="col-md-12 details-small-info"> 
+						<div class="col-md-12 col-sm-12 col-xs-12 details-small-info"> 
 							<p>Item #:  {{product.profile.name}}-{{product.colour_id}} / Width: {{product.width}} / Height: {{product.height.fraction}} / Rabbet: {{product.rabbet.fraction}}</p> 
 							<p>Profile Finish: {{product.colour.colour}} / Profile Type: N/A</p> 
 						</div> 
 					</div> 
 					<div class="row"> 
-						<div class="col-md-4 profile-img"> 
+						<div class="col-md-4 col-sm-4 col-xs-4 profile-img"> 
 							<img ng-src="images/products/measurements/{{product.profile.name | lowercase}}.png"> 
 						</div> 
-						<div class="col-md-8 product-img"> 
+						<div class="col-md-8 col-sm-8 col-xs-8 product-img"> 
 							<img ng-src="images/products/large/{{product.profile.name | lowercase}}/{{product.profile.name | lowercase}}-{{product.colour_id}}.png"> 
 						</div> 
 					</div> 
 					<div class="row details-info"> 
-						<div class="col-md-4"> 
+						<div class="col-md-4 col-sm-4 col-xs-4 "> 
 							<p class="details-price highlight "><strong>${{product.list_price.toFixed(2)}}</strong></p> 
 							<p>per sq foot</p> 	
 						</div> 
