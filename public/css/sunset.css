@@ -6029,7 +6029,51 @@ ul.products li.row ul.products-list {
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 100%
+    }
+    .main-container .row{
+        margin-left:0;
+        margin-right: 0; 
+    }
+    .header, .footer{
+         padding-left:0;
+        padding-right:0;
+    }
+    .main-container .home-left-text p{
+        text-align: left;
+    }
+    h1.home-page{
+        text-align: left;
+        font-size:30px;
+        padding-left: 0px;
+    }
+    
+}
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 100%
+    }
+    .main-container .row{
+        margin-left:0;
+        margin-right: 0; 
+    }
+    .header, .footer{
+         padding-left:0;
+        padding-right:0;
+    }
+    .main-container .home-left-text p{
+        text-align: left;
+    }
+    h1.home-page{
+        text-align: left ;
+        padding-left: 5px;
+         
+    }
+   
+}
+@media screen and (min-width: 994px) {
     .container,
     .main-container {
         max-width: 992px;
@@ -6037,9 +6081,12 @@ ul.products li.row ul.products-list {
         padding-left: 0;
         padding-right: 0
     }
-}
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 100%
+     .main-container .home-left-text p{
+        text-align: right;
+    }
+    h1.home-page{
+        text-align: right;
+        
     }
 }
+

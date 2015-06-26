@@ -3,5 +3,5 @@ Options FollowSymLinks
 #RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !index
-RewriteCond %{REQUEST_URI} !.*\.(css¦js|html|png) 
+RewriteCond %{REQUEST_URI} !.*\.(css¦js|html|png|scss) 
 RewriteRule ^ index.php [QSA]

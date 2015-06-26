@@ -5,7 +5,7 @@ require '../vendor/autoload.php';
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
-/*
+
 $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      => 'localhost',
@@ -16,19 +16,6 @@ $capsule->addConnection([
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
 ]);
-*/
-/* --- FOR SUNSETMOULDINGS.CA ---- */
-
-$capsule->addConnection(array(
-    'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => 'sunset_main',
-    'username'  => 'sunset',
-    'password'  => 'XvLTXT#Rg!sH!',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => ''
-));
 
 // Set the event dispatcher used by Eloquent models... (optional)
 use Illuminate\Events\Dispatcher;
@@ -42,7 +29,7 @@ $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
 $app = new \Slim\Slim();
- 
+
 $app->get('/', function() use ($app) {
     readfile('index.html');
     $app->stop();
@@ -50,10 +37,8 @@ $app->get('/', function() use ($app) {
 
 
 $app->get('/sunsetApp/products', function() {
-    $products = Products::with( 'Rabbet', 'Colour', 'Height', 'Profile')->get();
-   
-    $heights = Heights::with( 'Fraction')->get();
-     echo $products->toJson();
+    $products = Products::all();
+    echo $products->toJson();
 });
 
 $app->get('/sunsetApp/products/:id', function($id) use($app) {
@@ -102,8 +87,7 @@ $app->delete('/sunsetApp/products/:id', function($id) use($app) {
 
 
 $app->get('/sunsetApp/profiles', function() {
-    $profiles = Profiles::with('Products')->get();
-    
+    $profiles = Profiles::all();
     echo $profiles->toJson();
 });
 
@@ -157,7 +141,7 @@ $app->get('/sunsetApp/rabbets', function() {
     echo $rabbets->toJson();
 });
 
-$app->get('/rabbets/:id', function($id) use($app) {
+$app->get('/sunsetApp/rabbets/:id', function($id) use($app) {
     $rabbets = Rabbets::find($id);
     if (is_null($rabbets)) {
         $app->response->status(404);
@@ -203,7 +187,7 @@ $app->delete('/sunsetApp/rabbets/:id', function($id) use($app) {
 
 
 $app->get('/sunsetApp/heights', function() {
-    $heights = Heights::with('Fraction')->get();
+    $heights = Heights::all();
     echo $heights->toJson();
 });
 
@@ -266,7 +250,7 @@ $app->get('/sunsetApp/colours/:id', function($id) use($app) {
     echo $colours->toJson();    
 });
 
-$app->post('//sunsetApp/colours', function() use($app) {
+$app->post('/sunsetApp/colours', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $colours = new Colours;
@@ -402,6 +386,56 @@ $app->delete('/sunsetApp/catalogues/:id', function($id) use($app) {
 });
 
 
+$app->get('/sunsetApp/productslists', function() {
+    $productslists = ProductsList::all();
+    echo $productslists->toJson();
+});
+
+$app->get('/sunsetApp/productslists/:id', function($id) use($app) {
+    $productsList = ProductsList::find($id);
+    if (is_null($productsList)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    echo $productsList->toJson();    
+});
+
+$app->post('/sunsetApp/productslists', function() use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $productsList = new ProductsList;
+    
+    $productsList->myattr = $obj->{'myattr'};
+    $productsList->save();
+    $app->response->status(201);
+    echo $productsList->toJson();    
+});
+
+$app->put('/sunsetApp/productslists/:id', function($id) use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $productsList = ProductsList::find($id);
+    if (is_null($productsList)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    
+    $productsList->myattr = $obj->{'myattr'};
+    $productsList->save();
+    echo $productsList->toJson();    
+});
+
+$app->delete('/sunsetApp/productslists/:id', function($id) use($app) {
+    $productsList = ProductsList::find($id);
+    if (is_null($productsList)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    $productsList->delete();
+    $app->response->status(204);
+});
+
+
 $app->get('/sunsetApp/contacts', function() {
     $contacts = Contact::all();
     echo $contacts->toJson();
@@ -450,41 +484,56 @@ $app->delete('/sunsetApp/contacts/:id', function($id) use($app) {
     $contact->delete();
     $app->response->status(204);
 });
-////
-$app->get('/sunsetApp/productsList', function() {
+
+
+$app->get('/sunsetApp/logins', function() {
+    $logins = Login::all();
+    echo $logins->toJson();
+});
+
+$app->get('/sunsetApp/logins/:id', function($id) use($app) {
+    $login = Login::find($id);
+    if (is_null($login)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    echo $login->toJson();    
+});
+
+$app->post('/sunsetApp/logins', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
-    $productsList = new Contact;
+    $login = new Login;
     
-    $productsList->myattr = $obj->{'myattr'};
-    $productsList->save();
+    $login->myattr = $obj->{'myattr'};
+    $login->save();
     $app->response->status(201);
-    echo $productsList->toJson();    
+    echo $login->toJson();    
 });
 
-$app->get('/sunsetApp/productsList/:id', function($id) use($app) {
-  
-});
-
-$app->post('/sunsetApp/productsList', function() use($app) {
+$app->put('/sunsetApp/logins/:id', function($id) use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
+    $login = Login::find($id);
+    if (is_null($login)) {
+        $app->response->status(404);
+        $app->stop();
+    }
     
+    $login->myattr = $obj->{'myattr'};
+    $login->save();
+    echo $login->toJson();    
 });
 
-$app->put('/sunsetApp/productsList/:id', function($id) use($app) {
-    $body = $app->request->getBody();
-    $obj = json_decode($body);
-     
-});
-
-$app->delete('/sunsetApp/productsList/:id', function($id) use($app) {
-    
+$app->delete('/sunsetApp/logins/:id', function($id) use($app) {
+    $login = Login::find($id);
+    if (is_null($login)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    $login->delete();
     $app->response->status(204);
 });
-
-
-
 
 
 
