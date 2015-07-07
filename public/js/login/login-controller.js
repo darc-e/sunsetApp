@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('LoginController', ['$scope', '$modal', 'resolvedLogin', 'Login',
-    function ($scope, $modal, resolvedLogin, Login) {
+  .controller('LoginController', ['$scope', '$modal', 'resolvedMembers', 'Members',
+    function ($scope, $modal, resolvedMembers, Members) {
 
-      $scope.logins = resolvedLogin;
+      $scope.members = resolvedMembers;
 
       $scope.create = function () {
         $scope.clear();
@@ -12,70 +12,56 @@ angular.module('sunsetApp')
       };
 
       $scope.update = function (id) {
-        $scope.login = Login.get({id: id});
+        $scope.members = Members.get({id: id});
         $scope.open(id);
       };
 
       $scope.delete = function (id) {
-        Login.delete({id: id},
+        Members.delete({id: id},
           function () {
-            $scope.logins = Login.query();
+            $scope.members = Members.query();
           });
       };
 
       $scope.save = function (id) {
         if (id) {
-          Login.update({id: id}, $scope.login,
+          Members.update({id: id}, $scope.members,
             function () {
-              $scope.logins = Login.query();
+              $scope.members = Members.query();
               $scope.clear();
             });
         } else {
-          Login.save($scope.login,
+          Members.save($scope.members,
             function () {
-              $scope.logins = Login.query();
+              $scope.members = Members.query();
               $scope.clear();
             });
         }
       };
 
       $scope.clear = function () {
-        $scope.login = {
+        $scope.members = {
           
-          "myattr": "",
+          "name": "",
           
           "id": ""
         };
       };
 
       $scope.open = function (id) {
-        var loginSave = $modal.open({
-          templateUrl: 'login-save.html',
-          controller: 'LoginSaveController',
+        var membersSave = $modal.open({
+          templateUrl: 'members-save.html',
+          controller: 'MembersSaveController',
           resolve: {
-            login: function () {
-              return $scope.login;
+            members: function () {
+              return $scope.members;
             }
           }
         });
 
-        loginSave.result.then(function (entity) {
-          $scope.login = entity;
+        membersSave.result.then(function (entity) {
+          $scope.members = entity;
           $scope.save(id);
         });
-      };
-    }])
-  .controller('LoginSaveController', ['$scope', '$modalInstance', 'login',
-    function ($scope, $modalInstance, login) {
-      $scope.login = login;
-
-      
-
-      $scope.ok = function () {
-        $modalInstance.close($scope.login);
-      };
-
-      $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
       };
     }]);

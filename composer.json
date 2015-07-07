@@ -1,7 +1,7 @@
 {
     "name": "sunsetApp",    
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.4.0",
         "slim/slim": "2.*",
         "slim/extras": "2.*",
         "illuminate/console": "*",

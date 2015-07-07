@@ -9,6 +9,9 @@ $capsule = new Capsule;
 $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      => 'localhost',
+    /*'database'  => 'darcyg_sunset_main',
+    'username'  => 'darcyg',
+    'password'  => 'CuuJe.R0wee5ah',*/
     'database'  => 'sunset_main',
     'username'  => 'root',
     'password'  => '',
@@ -29,7 +32,7 @@ $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
 $app = new \Slim\Slim();
-
+ 
 $app->get('/', function() use ($app) {
     readfile('index.html');
     $app->stop();
@@ -37,8 +40,10 @@ $app->get('/', function() use ($app) {
 
 
 $app->get('/sunsetApp/products', function() {
-    $products = Products::all();
-    echo $products->toJson();
+    $products = Products::with( 'Rabbet', 'Colour', 'Height', 'Profile')->get();
+   
+    $heights = Heights::with( 'Fraction')->get();
+     echo $products->toJson();
 });
 
 $app->get('/sunsetApp/products/:id', function($id) use($app) {
@@ -87,7 +92,8 @@ $app->delete('/sunsetApp/products/:id', function($id) use($app) {
 
 
 $app->get('/sunsetApp/profiles', function() {
-    $profiles = Profiles::all();
+    $profiles = Profiles::with('Products')->get();
+    
     echo $profiles->toJson();
 });
 
@@ -141,7 +147,7 @@ $app->get('/sunsetApp/rabbets', function() {
     echo $rabbets->toJson();
 });
 
-$app->get('/sunsetApp/rabbets/:id', function($id) use($app) {
+$app->get('/rabbets/:id', function($id) use($app) {
     $rabbets = Rabbets::find($id);
     if (is_null($rabbets)) {
         $app->response->status(404);
@@ -187,7 +193,7 @@ $app->delete('/sunsetApp/rabbets/:id', function($id) use($app) {
 
 
 $app->get('/sunsetApp/heights', function() {
-    $heights = Heights::all();
+    $heights = Heights::with('Fraction')->get();
     echo $heights->toJson();
 });
 
@@ -250,7 +256,7 @@ $app->get('/sunsetApp/colours/:id', function($id) use($app) {
     echo $colours->toJson();    
 });
 
-$app->post('/sunsetApp/colours', function() use($app) {
+$app->post('//sunsetApp/colours', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
     $colours = new Colours;
@@ -386,56 +392,6 @@ $app->delete('/sunsetApp/catalogues/:id', function($id) use($app) {
 });
 
 
-$app->get('/sunsetApp/productslists', function() {
-    $productslists = ProductsList::all();
-    echo $productslists->toJson();
-});
-
-$app->get('/sunsetApp/productslists/:id', function($id) use($app) {
-    $productsList = ProductsList::find($id);
-    if (is_null($productsList)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    echo $productsList->toJson();    
-});
-
-$app->post('/sunsetApp/productslists', function() use($app) {
-    $body = $app->request->getBody();
-    $obj = json_decode($body);
-    $productsList = new ProductsList;
-    
-    $productsList->myattr = $obj->{'myattr'};
-    $productsList->save();
-    $app->response->status(201);
-    echo $productsList->toJson();    
-});
-
-$app->put('/sunsetApp/productslists/:id', function($id) use($app) {
-    $body = $app->request->getBody();
-    $obj = json_decode($body);
-    $productsList = ProductsList::find($id);
-    if (is_null($productsList)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    
-    $productsList->myattr = $obj->{'myattr'};
-    $productsList->save();
-    echo $productsList->toJson();    
-});
-
-$app->delete('/sunsetApp/productslists/:id', function($id) use($app) {
-    $productsList = ProductsList::find($id);
-    if (is_null($productsList)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    $productsList->delete();
-    $app->response->status(204);
-});
-
-
 $app->get('/sunsetApp/contacts', function() {
     $contacts = Contact::all();
     echo $contacts->toJson();
@@ -484,57 +440,137 @@ $app->delete('/sunsetApp/contacts/:id', function($id) use($app) {
     $contact->delete();
     $app->response->status(204);
 });
-
-
-$app->get('/sunsetApp/logins', function() {
-    $logins = Login::all();
-    echo $logins->toJson();
-});
-
-$app->get('/sunsetApp/logins/:id', function($id) use($app) {
-    $login = Login::find($id);
-    if (is_null($login)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    echo $login->toJson();    
-});
-
-$app->post('/sunsetApp/logins', function() use($app) {
+////
+$app->get('/sunsetApp/productsList', function() {
     $body = $app->request->getBody();
     $obj = json_decode($body);
-    $login = new Login;
+    $productsList = new Contact;
     
-    $login->myattr = $obj->{'myattr'};
-    $login->save();
+    $productsList->myattr = $obj->{'myattr'};
+    $productsList->save();
     $app->response->status(201);
-    echo $login->toJson();    
+    echo $productsList->toJson();    
 });
 
-$app->put('/sunsetApp/logins/:id', function($id) use($app) {
+$app->get('/sunsetApp/productsList/:id', function($id) use($app) {
+  
+});
+
+$app->post('/sunsetApp/productsList', function() use($app) {
     $body = $app->request->getBody();
     $obj = json_decode($body);
-    $login = Login::find($id);
-    if (is_null($login)) {
-        $app->response->status(404);
-        $app->stop();
-    }
     
-    $login->myattr = $obj->{'myattr'};
-    $login->save();
-    echo $login->toJson();    
 });
 
-$app->delete('/sunsetApp/logins/:id', function($id) use($app) {
-    $login = Login::find($id);
-    if (is_null($login)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    $login->delete();
+$app->put('/sunsetApp/productsList/:id', function($id) use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+     
+});
+
+$app->delete('/sunsetApp/productsList/:id', function($id) use($app) {
+    
     $app->response->status(204);
 });
 
+$app->get('/sunsetApp/members', function() {
+    $members = Members::all();
+    echo $members->toJson();
+});
+
+$app->get('/sunsetApp/members/:id', function($id) use($app) {
+    $members = WhereToBuy::find($id);
+    if (is_null($members)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    echo $members->toJson();    
+});
+
+$app->post('/sunsetApp/members', function() use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $members = new Members;
+    
+    $members->myattr = $obj->{'myattr'};
+    $members->save();
+    $app->response->status(201);
+    echo $members->toJson();    
+});
+
+$app->put('/sunsetApp/members/:id', function($id) use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $members = Members::find($id);
+    if (is_null($whereToBuy)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    
+    $members->myattr = $obj->{'myattr'};
+    $members->save();
+    echo $members->toJson();    
+});
+
+$app->delete('/sunsetApp/members/:id', function($id) use($app) {
+    $members = Members::find($id);
+    if (is_null($members)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    $members->delete();
+    $app->response->status(204);
+});
+
+//
+$app->get('/sunsetApp/login', function() {
+    $members = Members::all();
+    echo $members->toJson();
+});
+
+$app->get('/sunsetApp/login/:id', function($id) use($app) {
+    $members = WhereToBuy::find($id);
+    if (is_null($members)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    echo $members->toJson();    
+});
+
+$app->post('/sunsetApp/login', function() use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $members = new Members;
+    
+    $members->myattr = $obj->{'myattr'};
+    $members->save();
+    $app->response->status(201);
+    echo $members->toJson();    
+});
+
+$app->put('/sunsetApp/login/:id', function($id) use($app) {
+    $body = $app->request->getBody();
+    $obj = json_decode($body);
+    $members = Members::find($id);
+    if (is_null($whereToBuy)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    
+    $members->myattr = $obj->{'myattr'};
+    $members->save();
+    echo $members->toJson();    
+});
+
+$app->delete('/sunsetApp/login/:id', function($id) use($app) {
+    $members = Members::find($id);
+    if (is_null($members)) {
+        $app->response->status(404);
+        $app->stop();
+    }
+    $members->delete();
+    $app->response->status(204);
+});
 
 
 $app->run();

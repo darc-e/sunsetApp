@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--<base href="/sunsetApp/">-->
   <base href="/">
   <title>Sunset Mouldings</title>
  <!-- <link href="lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">-->
@@ -25,7 +24,7 @@
                             <div class="info row">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-12 log-in"> <a ng-href="http://sunset.local/login">Client Log in <i class="fa fa-lock"></i></a> 
+                                        <div class="col-md-12 log-in"> <a ng-href="/login">Client Log in <i class="fa fa-lock"></i></a> 
                                         </div>
                                     </div>
                                     <div class="row">
@@ -49,14 +48,7 @@
                             </div>
                             <div class="collapse navbar-collapse" id="js-navbar-collapse">
                                 <ul class="nav navbar-nav" ng-controller="NavCtrl">
-                                <!--
-                                    <li ng-class="classActive('/')"><a ng-href="/sunsetApp">HOME</a></li>
-                                    <li ng-class="classActive('/products')"><a ng-href="/sunsetApp/products">PRODUCTS</a></li>
-                                    <li ng-class="classActive('/whereToBuy')"><a ng-href="/sunsetApp/whereToBuy">WHERE TO BUY</a></li>
-                                    <li ng-class="classActive('/catalogue')"><a ng-href="/sunsetApp/catalogue">CATALOGUE</a></li>
-                                    <li ng-class="classActive('/contact')"><a ng-href="/sunsetApp/contact">CONTACT</a></li>
-                                -->
-                                     <li ng-class="classActive('/')"><a ng-href="/">HOME</a></li>
+                                    <li ng-class="classActive('/')"><a ng-href="/">HOME</a></li>
                                     <!--<li ng-class="classActive('/profiles')"><a ng-href="/profiles">PROFILES</a></li>-->
                                     <li ng-class="classActive('/products')"><a ng-href="/products">PRODUCTS</a></li>
                                    
@@ -125,6 +117,12 @@
     <!--<script src="js/filters/filters.js"></script> -->
         <script src="js/home/home-controller.js"></script>
         <script src="js/nav/nav-controller.js"></script>
+        <script src="js/members/members-controller.js"></script>
+        <script src="js/members/members-router.js"></script>
+        <script src="js/members/members-service.js"></script>
+         <script src="js/login/login-controller.js"></script>
+        <script src="js/login/login-router.js"></script>
+        <script src="js/login/login-service.js"></script>
         <script src="js/products/products-controller.js"></script>
         <script src="js/products/products-router.js"></script>
         <script src="js/products/products-service.js"></script>
@@ -145,9 +143,6 @@
         <script src="js/productsList/productsList-router.js"></script>
         <script src="js/contact/contact-controller.js"></script>
         <script src="js/contact/contact-router.js"></script>
-        <script src="js/login/login-controller.js"></script>
-        <script src="js/login/login-router.js"></script>
-        <script src="js/login/login-service.js"></script>
         <script src="js/bootstrap/carousel-controller.js"></script>
 
   

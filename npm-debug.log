@@ -1,0 +1,361 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/bukowski/.nvm/versions/node/v0.12.0/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.11.1
+3 info using node@v0.12.0
+4 verbose readDependencies loading dependencies from /Users/bukowski/Repos/sunsetApp/package.json
+5 warn package.json sunsetApp@0.0.0 No repository field.
+6 warn package.json sunsetApp@0.0.0 No README data
+7 warn package.json sunsetApp@0.0.0 No license field.
+8 verbose install where, deps [ '/Users/bukowski/Repos/sunsetApp',
+8 verbose install   [ 'grunt',
+8 verbose install     'grunt-autoprefixer',
+8 verbose install     'grunt-bower-install',
+8 verbose install     'grunt-bowercopy',
+8 verbose install     'grunt-concurrent',
+8 verbose install     'grunt-connect-proxy',
+8 verbose install     'grunt-contrib-clean',
+8 verbose install     'grunt-contrib-concat',
+8 verbose install     'grunt-contrib-connect',
+8 verbose install     'grunt-contrib-copy',
+8 verbose install     'grunt-contrib-cssmin',
+8 verbose install     'grunt-contrib-htmlmin',
+8 verbose install     'grunt-contrib-imagemin',
+8 verbose install     'grunt-contrib-jshint',
+8 verbose install     'grunt-contrib-uglify',
+8 verbose install     'grunt-contrib-watch',
+8 verbose install     'grunt-karma',
+8 verbose install     'grunt-modernizr',
+8 verbose install     'grunt-ngmin',
+8 verbose install     'grunt-rev',
+8 verbose install     'grunt-serve',
+8 verbose install     'grunt-svgmin',
+8 verbose install     'grunt-sync',
+8 verbose install     'grunt-usemin',
+8 verbose install     'karma',
+8 verbose install     'karma-jasmine',
+8 verbose install     'karma-junit-reporter',
+8 verbose install     'karma-ng-scenario',
+8 verbose install     'load-grunt-tasks',
+8 verbose install     'time-grunt' ] ]
+9 verbose install where, peers [ '/Users/bukowski/Repos/sunsetApp', [] ]
+10 verbose installManyTop reading for lifecycle /Users/bukowski/Repos/sunsetApp/package.json
+11 info preinstall sunsetApp@0.0.0
+12 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/bootstrap-sass/package.json
+13 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt/package.json
+14 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-autoprefixer/package.json
+15 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-bower-install/package.json
+16 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-bowercopy/package.json
+17 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-concurrent/package.json
+18 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-connect-proxy/package.json
+19 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-clean/package.json
+20 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-concat/package.json
+21 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-connect/package.json
+22 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-copy/package.json
+23 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-cssmin/package.json
+24 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-htmlmin/package.json
+25 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-imagemin/package.json
+26 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-jshint/package.json
+27 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-uglify/package.json
+28 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-watch/package.json
+29 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-karma/package.json
+30 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-modernizr/package.json
+31 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-ngmin/package.json
+32 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-rev/package.json
+33 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-serve/package.json
+34 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-svgmin/package.json
+35 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-sync/package.json
+36 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-usemin/package.json
+37 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma/package.json
+38 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-chrome-launcher/package.json
+39 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-coffee-preprocessor/package.json
+40 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-firefox-launcher/package.json
+41 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-html2js-preprocessor/package.json
+42 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-jasmine/package.json
+43 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-junit-reporter/package.json
+44 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-ng-scenario/package.json
+45 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-phantomjs-launcher/package.json
+46 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-requirejs/package.json
+47 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-script-launcher/package.json
+48 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/load-grunt-tasks/package.json
+49 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/lodash/package.json
+50 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/requirejs/package.json
+51 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/time-grunt/package.json
+52 verbose installManyTop reading scoped package data from /Users/bukowski/Repos/sunsetApp/node_modules/toaster/package.json
+53 info package.json grunt-contrib-htmlmin@0.1.3 No README data
+54 info package.json grunt-contrib-htmlmin@0.1.3 No license field.
+55 info package.json grunt-rev@0.1.0 No license field.
+56 info package.json karma@0.10.10 No license field.
+57 info package.json karma-phantomjs-launcher@0.1.4 No README data
+58 info package.json toaster@0.1.2 No license field.
+59 info package.json grunt@0.4.5 No license field.
+60 info package.json grunt-bowercopy@0.4.1 No license field.
+61 info package.json grunt-bower-install@0.7.0 No license field.
+62 info package.json grunt-concurrent@0.4.3 No license field.
+63 info package.json grunt-connect-proxy@0.1.11 No license field.
+64 info package.json grunt-contrib-clean@0.5.0 No license field.
+65 info package.json grunt-contrib-concat@0.3.0 No license field.
+66 info package.json grunt-contrib-copy@0.4.1 No license field.
+67 info package.json grunt-contrib-connect@0.10.1 No license field.
+68 info package.json grunt-contrib-cssmin@0.7.0 No license field.
+69 info package.json grunt-contrib-imagemin@0.4.1 No license field.
+70 info package.json grunt-contrib-watch@0.5.3 No license field.
+71 info package.json grunt-contrib-uglify@0.2.7 No license field.
+72 info package.json grunt-modernizr@0.4.1 No license field.
+73 info package.json grunt-sync@0.0.8 No license field.
+74 info package.json grunt-contrib-jshint@0.7.2 No license field.
+75 info package.json grunt-ngmin@0.0.3 license should be a valid SPDX license expression
+76 info package.json grunt-svgmin@0.3.1 No license field.
+77 info package.json grunt-serve@0.1.6 No license field.
+78 info package.json grunt-usemin@2.0.2 license should be a valid SPDX license expression
+79 info package.json requirejs@2.1.18 No license field.
+80 verbose readDependencies loading dependencies from /Users/bukowski/Repos/sunsetApp/package.json
+81 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/bootstrap-sass/package.json
+82 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt/package.json
+83 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-autoprefixer/package.json
+84 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-bower-install/package.json
+85 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-bowercopy/package.json
+86 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-concurrent/package.json
+87 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-connect-proxy/package.json
+88 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-clean/package.json
+89 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-concat/package.json
+90 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-connect/package.json
+91 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-copy/package.json
+92 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-cssmin/package.json
+93 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-htmlmin/package.json
+94 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-imagemin/package.json
+95 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-jshint/package.json
+96 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-uglify/package.json
+97 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-contrib-watch/package.json
+98 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-karma/package.json
+99 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-modernizr/package.json
+100 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-ngmin/package.json
+101 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-rev/package.json
+102 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-serve/package.json
+103 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-svgmin/package.json
+104 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-sync/package.json
+105 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/grunt-usemin/package.json
+106 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma/package.json
+107 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-chrome-launcher/package.json
+108 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-coffee-preprocessor/package.json
+109 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-firefox-launcher/package.json
+110 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-html2js-preprocessor/package.json
+111 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-jasmine/package.json
+112 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-junit-reporter/package.json
+113 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-ng-scenario/package.json
+114 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-phantomjs-launcher/package.json
+115 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-requirejs/package.json
+116 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/karma-script-launcher/package.json
+117 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/load-grunt-tasks/package.json
+118 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/lodash/package.json
+119 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/requirejs/package.json
+120 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/time-grunt/package.json
+121 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/toaster/package.json
+122 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/.bin/grunt-modernizr/package.json
+123 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/.bin/karma/package.json
+124 verbose targetResolver reading package data from /Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js/package.json
+125 verbose already installed skipping grunt-ngmin@~0.0.3 /Users/bukowski/Repos/sunsetApp
+126 verbose already installed skipping grunt-rev@~0.1.0 /Users/bukowski/Repos/sunsetApp
+127 verbose already installed skipping grunt-serve@^0.1.6 /Users/bukowski/Repos/sunsetApp
+128 verbose already installed skipping grunt-svgmin@~0.3.0 /Users/bukowski/Repos/sunsetApp
+129 verbose already installed skipping grunt-sync@~0.0.5 /Users/bukowski/Repos/sunsetApp
+130 verbose already installed skipping grunt-usemin@~2.0.2 /Users/bukowski/Repos/sunsetApp
+131 verbose already installed skipping karma@~0.10.8 /Users/bukowski/Repos/sunsetApp
+132 verbose already installed skipping karma-jasmine@~0.1.0 /Users/bukowski/Repos/sunsetApp
+133 verbose already installed skipping karma-junit-reporter@~0.1.0 /Users/bukowski/Repos/sunsetApp
+134 verbose already installed skipping karma-ng-scenario@~0.1.0 /Users/bukowski/Repos/sunsetApp
+135 verbose already installed skipping load-grunt-tasks@~0.2.0 /Users/bukowski/Repos/sunsetApp
+136 verbose already installed skipping time-grunt@0.2.3 /Users/bukowski/Repos/sunsetApp
+137 verbose already installed skipping grunt@^0.4.5 /Users/bukowski/Repos/sunsetApp
+138 verbose already installed skipping grunt-autoprefixer@^3.0.0 /Users/bukowski/Repos/sunsetApp
+139 verbose already installed skipping grunt-bower-install@~0.7.0 /Users/bukowski/Repos/sunsetApp
+140 verbose already installed skipping grunt-bowercopy@~0.4.1 /Users/bukowski/Repos/sunsetApp
+141 verbose already installed skipping grunt-concurrent@~0.4.2 /Users/bukowski/Repos/sunsetApp
+142 verbose already installed skipping grunt-connect-proxy@~0.1.7 /Users/bukowski/Repos/sunsetApp
+143 verbose already installed skipping grunt-contrib-clean@~0.5.0 /Users/bukowski/Repos/sunsetApp
+144 verbose already installed skipping grunt-contrib-concat@~0.3.0 /Users/bukowski/Repos/sunsetApp
+145 verbose already installed skipping grunt-contrib-connect@^0.10.1 /Users/bukowski/Repos/sunsetApp
+146 verbose already installed skipping grunt-contrib-copy@~0.4.1 /Users/bukowski/Repos/sunsetApp
+147 verbose already installed skipping grunt-contrib-cssmin@~0.7.0 /Users/bukowski/Repos/sunsetApp
+148 verbose already installed skipping grunt-contrib-htmlmin@~0.1.3 /Users/bukowski/Repos/sunsetApp
+149 verbose already installed skipping grunt-contrib-imagemin@~0.4.0 /Users/bukowski/Repos/sunsetApp
+150 verbose already installed skipping grunt-contrib-jshint@~0.7.2 /Users/bukowski/Repos/sunsetApp
+151 verbose already installed skipping grunt-contrib-uglify@~0.2.7 /Users/bukowski/Repos/sunsetApp
+152 verbose already installed skipping grunt-contrib-watch@~0.5.3 /Users/bukowski/Repos/sunsetApp
+153 verbose already installed skipping grunt-karma@~0.6.2 /Users/bukowski/Repos/sunsetApp
+154 verbose already installed skipping grunt-modernizr@~0.4.1 /Users/bukowski/Repos/sunsetApp
+155 silly install resolved []
+156 info build /Users/bukowski/Repos/sunsetApp
+157 info linkStuff sunsetApp@0.0.0
+158 silly linkStuff sunsetApp@0.0.0 has /Users/bukowski/Repos as its parent node_modules
+159 verbose linkBins sunsetApp@0.0.0
+160 verbose linkMans sunsetApp@0.0.0
+161 verbose rebuildBundles sunsetApp@0.0.0
+162 verbose rebuildBundles [ '.bin',
+162 verbose rebuildBundles   'bootstrap-sass',
+162 verbose rebuildBundles   'grunt',
+162 verbose rebuildBundles   'grunt-autoprefixer',
+162 verbose rebuildBundles   'grunt-bower-install',
+162 verbose rebuildBundles   'grunt-bowercopy',
+162 verbose rebuildBundles   'grunt-concurrent',
+162 verbose rebuildBundles   'grunt-connect-proxy',
+162 verbose rebuildBundles   'grunt-contrib-clean',
+162 verbose rebuildBundles   'grunt-contrib-concat',
+162 verbose rebuildBundles   'grunt-contrib-connect',
+162 verbose rebuildBundles   'grunt-contrib-copy',
+162 verbose rebuildBundles   'grunt-contrib-cssmin',
+162 verbose rebuildBundles   'grunt-contrib-htmlmin',
+162 verbose rebuildBundles   'grunt-contrib-imagemin',
+162 verbose rebuildBundles   'grunt-contrib-jshint',
+162 verbose rebuildBundles   'grunt-contrib-uglify',
+162 verbose rebuildBundles   'grunt-contrib-watch',
+162 verbose rebuildBundles   'grunt-karma',
+162 verbose rebuildBundles   'grunt-modernizr',
+162 verbose rebuildBundles   'grunt-ngmin',
+162 verbose rebuildBundles   'grunt-rev',
+162 verbose rebuildBundles   'grunt-serve',
+162 verbose rebuildBundles   'grunt-svgmin',
+162 verbose rebuildBundles   'grunt-sync',
+162 verbose rebuildBundles   'grunt-usemin',
+162 verbose rebuildBundles   'karma',
+162 verbose rebuildBundles   'karma-chrome-launcher',
+162 verbose rebuildBundles   'karma-coffee-preprocessor',
+162 verbose rebuildBundles   'karma-firefox-launcher',
+162 verbose rebuildBundles   'karma-html2js-preprocessor',
+162 verbose rebuildBundles   'karma-jasmine',
+162 verbose rebuildBundles   'karma-junit-reporter',
+162 verbose rebuildBundles   'karma-ng-scenario',
+162 verbose rebuildBundles   'karma-phantomjs-launcher',
+162 verbose rebuildBundles   'karma-requirejs',
+162 verbose rebuildBundles   'karma-script-launcher',
+162 verbose rebuildBundles   'load-grunt-tasks',
+162 verbose rebuildBundles   'lodash',
+162 verbose rebuildBundles   'requirejs',
+162 verbose rebuildBundles   'time-grunt',
+162 verbose rebuildBundles   'toaster' ]
+163 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/bootstrap-sass
+164 info build /Users/bukowski/Repos/sunsetApp/node_modules/bootstrap-sass
+165 info preinstall bootstrap-sass@3.3.4
+166 info linkStuff bootstrap-sass@3.3.4
+167 silly linkStuff bootstrap-sass@3.3.4 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+168 verbose linkBins bootstrap-sass@3.3.4
+169 verbose linkMans bootstrap-sass@3.3.4
+170 verbose rebuildBundles bootstrap-sass@3.3.4
+171 info install bootstrap-sass@3.3.4
+172 info postinstall bootstrap-sass@3.3.4
+173 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-chrome-launcher
+174 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-chrome-launcher
+175 info preinstall karma-chrome-launcher@0.1.12
+176 info linkStuff karma-chrome-launcher@0.1.12
+177 silly linkStuff karma-chrome-launcher@0.1.12 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+178 verbose linkBins karma-chrome-launcher@0.1.12
+179 verbose linkMans karma-chrome-launcher@0.1.12
+180 verbose rebuildBundles karma-chrome-launcher@0.1.12
+181 verbose rebuildBundles [ '.bin', 'which' ]
+182 info install karma-chrome-launcher@0.1.12
+183 info postinstall karma-chrome-launcher@0.1.12
+184 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-coffee-preprocessor
+185 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-coffee-preprocessor
+186 info preinstall karma-coffee-preprocessor@0.1.3
+187 info linkStuff karma-coffee-preprocessor@0.1.3
+188 silly linkStuff karma-coffee-preprocessor@0.1.3 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+189 verbose linkBins karma-coffee-preprocessor@0.1.3
+190 verbose linkMans karma-coffee-preprocessor@0.1.3
+191 verbose rebuildBundles karma-coffee-preprocessor@0.1.3
+192 verbose rebuildBundles [ '.bin', 'coffee-script' ]
+193 info install karma-coffee-preprocessor@0.1.3
+194 info postinstall karma-coffee-preprocessor@0.1.3
+195 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-firefox-launcher
+196 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-firefox-launcher
+197 info preinstall karma-firefox-launcher@0.1.6
+198 info linkStuff karma-firefox-launcher@0.1.6
+199 silly linkStuff karma-firefox-launcher@0.1.6 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+200 verbose linkBins karma-firefox-launcher@0.1.6
+201 verbose linkMans karma-firefox-launcher@0.1.6
+202 verbose rebuildBundles karma-firefox-launcher@0.1.6
+203 info install karma-firefox-launcher@0.1.6
+204 info postinstall karma-firefox-launcher@0.1.6
+205 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-html2js-preprocessor
+206 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-html2js-preprocessor
+207 info preinstall karma-html2js-preprocessor@0.1.0
+208 info linkStuff karma-html2js-preprocessor@0.1.0
+209 silly linkStuff karma-html2js-preprocessor@0.1.0 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+210 verbose linkBins karma-html2js-preprocessor@0.1.0
+211 verbose linkMans karma-html2js-preprocessor@0.1.0
+212 verbose rebuildBundles karma-html2js-preprocessor@0.1.0
+213 info install karma-html2js-preprocessor@0.1.0
+214 info postinstall karma-html2js-preprocessor@0.1.0
+215 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-phantomjs-launcher
+216 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-phantomjs-launcher
+217 info preinstall karma-phantomjs-launcher@0.1.4
+218 info linkStuff karma-phantomjs-launcher@0.1.4
+219 silly linkStuff karma-phantomjs-launcher@0.1.4 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+220 verbose linkBins karma-phantomjs-launcher@0.1.4
+221 verbose linkMans karma-phantomjs-launcher@0.1.4
+222 verbose rebuildBundles karma-phantomjs-launcher@0.1.4
+223 verbose rebuildBundles [ '.bin', 'phantomjs' ]
+224 info install karma-phantomjs-launcher@0.1.4
+225 info postinstall karma-phantomjs-launcher@0.1.4
+226 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-requirejs
+227 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-requirejs
+228 info preinstall karma-requirejs@0.2.2
+229 info linkStuff karma-requirejs@0.2.2
+230 silly linkStuff karma-requirejs@0.2.2 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+231 verbose linkBins karma-requirejs@0.2.2
+232 verbose linkMans karma-requirejs@0.2.2
+233 verbose rebuildBundles karma-requirejs@0.2.2
+234 info install karma-requirejs@0.2.2
+235 info postinstall karma-requirejs@0.2.2
+236 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/karma-script-launcher
+237 info build /Users/bukowski/Repos/sunsetApp/node_modules/karma-script-launcher
+238 info preinstall karma-script-launcher@0.1.0
+239 info linkStuff karma-script-launcher@0.1.0
+240 silly linkStuff karma-script-launcher@0.1.0 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+241 verbose linkBins karma-script-launcher@0.1.0
+242 verbose linkMans karma-script-launcher@0.1.0
+243 verbose rebuildBundles karma-script-launcher@0.1.0
+244 info install karma-script-launcher@0.1.0
+245 info postinstall karma-script-launcher@0.1.0
+246 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/lodash
+247 info build /Users/bukowski/Repos/sunsetApp/node_modules/lodash
+248 info preinstall lodash@3.9.3
+249 info linkStuff lodash@3.9.3
+250 silly linkStuff lodash@3.9.3 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+251 verbose linkBins lodash@3.9.3
+252 verbose linkMans lodash@3.9.3
+253 verbose rebuildBundles lodash@3.9.3
+254 info install lodash@3.9.3
+255 info postinstall lodash@3.9.3
+256 verbose rebuild bundle /Users/bukowski/Repos/sunsetApp/node_modules/requirejs
+257 info build /Users/bukowski/Repos/sunsetApp/node_modules/requirejs
+258 info preinstall requirejs@2.1.18
+259 info linkStuff requirejs@2.1.18
+260 silly linkStuff requirejs@2.1.18 has /Users/bukowski/Repos/sunsetApp/node_modules as its parent node_modules
+261 verbose linkBins requirejs@2.1.18
+262 verbose link bins [ { 'r.js': './bin/r.js' },
+262 verbose link bins   '/Users/bukowski/Repos/sunsetApp/node_modules/.bin',
+262 verbose link bins   false ]
+263 verbose linkMans requirejs@2.1.18
+264 verbose rebuildBundles requirejs@2.1.18
+265 silly gentlyRm /Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js is being purged
+266 verbose gentlyRm don't care about contents; nuking /Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js
+267 silly vacuum-fs purging /Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js
+268 verbose stack Error: EACCES, unlink '/Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js'
+268 verbose stack     at Error (native)
+269 verbose cwd /Users/bukowski/Repos/sunsetApp
+270 error Darwin 14.3.0
+271 error argv "node" "/Users/bukowski/.nvm/versions/node/v0.12.0/bin/npm" "install"
+272 error node v0.12.0
+273 error npm  v2.11.1
+274 error path /Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js
+275 error code EACCES
+276 error errno -13
+277 error Error: EACCES, unlink '/Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js'
+277 error     at Error (native)
+277 error  { [Error: EACCES, unlink '/Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js']
+277 error   errno: -13,
+277 error   code: 'EACCES',
+277 error   path: '/Users/bukowski/Repos/sunsetApp/node_modules/.bin/r.js' }
+278 error Please try running this command again as root/Administrator.
+279 verbose exit [ -13, true ]

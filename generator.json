@@ -124,17 +124,8 @@
 			]
 		},
 		{
-			"name": "login",
-			"attrs": [
-				{
-					"attrName": "myattr",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				}
-			]
+			"name": "members",
+			
 		}
 	],
 	"composer": false

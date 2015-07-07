@@ -6,7 +6,7 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/home/home.html', 
 	        controller: 'HomeController'
     	})
-    	.when('/sunsetApp/products', {
+    	.when('/sunsetApp/productss', {
 	        templateUrl: 'views/products/products.html',
 	        controller: 'ProductsController'
 	    })
@@ -37,7 +37,11 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	        templateUrl: 'views/contact/contact.html',
 	        controller: 'ContactController'
 	    })
-      	.otherwise({redirectTo: '/yo'});
+	    .when('/sunsetApp/members', {
+	        templateUrl: 'views/members/members.html',
+	        controller: 'MembersController'
+	    })
+      	.otherwise({redirectTo: '/'});
 
       	$locationProvider.html5Mode(true);
   }]);
