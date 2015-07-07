@@ -11,7 +11,7 @@ class CreateLogins extends Migration
     
     public function init()
     {
-        $this->tableName = 'logins';
+        $this->tableName = 'members';
         $this->schema = $this->get('schema');
     }
 

@@ -523,54 +523,8 @@ $app->delete('/sunsetApp/members/:id', function($id) use($app) {
 });
 
 //
-$app->get('/sunsetApp/login', function() {
-    $members = Members::all();
-    echo $members->toJson();
-});
 
-$app->get('/sunsetApp/login/:id', function($id) use($app) {
-    $members = WhereToBuy::find($id);
-    if (is_null($members)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    echo $members->toJson();    
-});
 
-$app->post('/sunsetApp/login', function() use($app) {
-    $body = $app->request->getBody();
-    $obj = json_decode($body);
-    $members = new Members;
-    
-    $members->myattr = $obj->{'myattr'};
-    $members->save();
-    $app->response->status(201);
-    echo $members->toJson();    
-});
-
-$app->put('/sunsetApp/login/:id', function($id) use($app) {
-    $body = $app->request->getBody();
-    $obj = json_decode($body);
-    $members = Members::find($id);
-    if (is_null($whereToBuy)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    
-    $members->myattr = $obj->{'myattr'};
-    $members->save();
-    echo $members->toJson();    
-});
-
-$app->delete('/sunsetApp/login/:id', function($id) use($app) {
-    $members = Members::find($id);
-    if (is_null($members)) {
-        $app->response->status(404);
-        $app->stop();
-    }
-    $members->delete();
-    $app->response->status(204);
-});
 
 
 $app->run();

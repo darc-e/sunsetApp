@@ -1,6 +1,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date', 'angular.filter'])
-  .config(['$routeProvider', '$locationProvider',  function ($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', '$rootScopeProvider', function ($routeProvider, $locationProvider, $rootScopeProvider) {
+
     $routeProvider
       	.when('/', {
 	        templateUrl: 'views/home/home.html', 
@@ -39,6 +40,14 @@ angular.module('sunsetApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date',
 	    })
 	    .when('/sunsetApp/members', {
 	        templateUrl: 'views/members/members.html',
+	        controller: 'MembersController'
+	    })
+	    .when('/sunsetApp/login', {
+	        templateUrl: 'views/login/login.html',
+	        controller: 'MembersController'
+	    })
+	    .when('/sunsetApp/signup', {
+	        templateUrl: 'views/signup/signup.html',
 	        controller: 'MembersController'
 	    })
       	.otherwise({redirectTo: '/'});

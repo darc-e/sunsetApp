@@ -165,6 +165,9 @@ h5 {
 h6 {
     font-size: 12px
 }
+.medium{
+    font-size: 16px;
+}
 p {
     margin: 0 0 7px
 }
@@ -1510,6 +1513,9 @@ textarea.input-lg {
 }
 .has-feedback label.sr-only~.form-control-feedback {
     top: 0
+}
+.error{
+      color: #a94442;
 }
 .help-block {
     display: block;
@@ -4216,6 +4222,13 @@ button.contactBtn {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     background: #CCC;
+}
+a.signup{
+    font-size: 11px;
+    color: #6d6e72;
+}
+a.signup:hover{
+    color: #f7971e;
 }
 
 .clear{

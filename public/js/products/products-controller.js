@@ -10,6 +10,7 @@ angular.module('sunsetApp')
       $scope.heights = resolvedHeights;
       $scope.prod_id = $routeParams.id;
      
+     
 
      
       $scope.create = function () {

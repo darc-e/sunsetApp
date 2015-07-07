@@ -3,8 +3,8 @@
 angular.module('sunsetApp')
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when('/login', {
-        templateUrl: 'views/login/login.html',
+      .when('/signup', {
+        templateUrl: 'views/signup/signup.html',
         controller: 'MembersController',
         resolve:{
           resolvedMembers: ['Members', function (Members) {

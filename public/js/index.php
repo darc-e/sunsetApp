@@ -155,7 +155,10 @@ $app->get('/sunsetApp/login', function() {
     $members = Login::all();
     echo $members->toJson();
 });
-
+$app->get('/sunsetApp/members', function() {
+    $members = Members::all();
+    echo $members->toJson();
+});
 
 
 

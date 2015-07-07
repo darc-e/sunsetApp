@@ -1,10 +1,33 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('MembersController', ['$scope', '$modal', 'resolvedMembers', 'Members',
-    function ($scope, $modal, resolvedMembers, Members) {
+  .controller('MembersController', ['$rootScope', '$scope', '$modal', 'resolvedMembers', 'Members', '$location',
+    function ( $rootScope, $scope, $modal, resolvedMembers, Members, $location) {
 
       $scope.members = resolvedMembers;
+      $scope.error = "";
+      $scope.doLogin = function(login){
+        $scope.error = "";
+        if (login.p1 != login.p2) {
+          $scope.error = "Passwords do not match";
+        } else{
+
+          angular.forEach( $scope.members, function(item) {
+            //console.log ("email:" + item.email + ", Password:" + item.password)
+            if (login.email == item.email && login.p1 == item.password){
+              $rootScope.loggedIn = 1;
+              $location.path('/products');
+            } else{
+              $scope.error = "Login Information is Incorrect";
+            }
+
+          });
+        }
+        
+       console.log($rootScope.loggedIn)
+        
+      };
+      
 
       $scope.create = function () {
         $scope.clear();

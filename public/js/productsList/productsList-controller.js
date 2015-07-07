@@ -4,7 +4,9 @@ angular.module('sunsetApp')
   .controller('ProductsListController', ['$scope', '$rootScope', '$modal', '$location',
     function ($scope, $rootScope, $modal, $location) {
 
-
+      if ($rootScope.loggedIn == 0 ){
+        $location.path('/login');
+      }
      
       $scope.open = function (id) {
         var productListSave = $modal.open({

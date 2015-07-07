@@ -1,2 +1,51 @@
-MEMENfhfhhhfhfENENEN {{members}}-members
-<div class="row inside-container" ng-controller="LoginController"> <div class="col-md-3"> <h2>Client Login</h2> <div class="panel panel-default login-panel"> <div class="panel-heading">Login Form </div> <div class="panel-body"> <form role="form login-form;"> <p class="form-group" ng-cloak ng-show="createMode"> <label for="loginCompany">Company Name</label> <input id="loginConfirm" required name="confirm" type="text" class="form-control" placeholder="Company"> </p> <p class="form-group"> <label for="loginEmail">Email</label> <input id="loginEmail" required name="email" type="email" ng-model="email" class="form-control" placeholder="Enter email"> </p> <p class="form-group" ng-cloak ng-show="createMode"> <label for="loginCompany">Contact Number</label> <input id="loginConfirm" required name="confirm" type="tel" class="form-control" placeholder="Phone number"> </p> <p class="form-group"> <label for="loginPass">Password</label> <input id="loginPass" required name="pass" type="password" ng-model="pass" class="form-control" placeholder="Enter password"> </p> <p class="form-group" ng-cloak ng-show="createMode"> <label for="loginConfirm">Confirm Password</label> <input id="loginConfirm" required name="confirm" type="password" ng-model="confirm" class="form-control" placeholder="Confirm password"> </p> <p> <button class="btn btn-primary" ng-click="passwordLogin(email, pass)" ng-hide="createMode">Log In</button> <button class="btn btn-default" ng-click="createMode = true" ng-hide="createMode">Register</button> <button class="btn btn-primary" ng-cloak ng-show="createMode" ng-click="createAccount(email, pass, confirm)">Create Account</button> <button class="btn btn-default" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button> </p> </form> <p ng-show="err" class="bg-danger">{{err}}</p> </div> </div> </div> <div class="col-md-9 hidden-sm hidden-xs login-dude"> <img src="images/fillers/Guy_with_laptop.3b0f530e.png" style="text-align: right"> </div> </div>
+
+<div class="row inside-container" ng-controller="LoginController"> 
+	<div class="col-md-3"> 
+		<h2>Client Login</h2> 
+		<span class="error">{{error}}</span>
+		<div class="panel panel-default login-panel"> 
+			<div class="panel-heading">Login Form </div> 
+			<div class="panel-body"> 
+				<form > 
+				<!--
+					<p class="form-group" ng-cloak ng-show="createMode"> 
+						<label for="loginCompany">Company Name</label> 
+						<input id="loginConfirm" required name="confirm" type="text" class="form-control" placeholder="Company">
+					</p> 
+				-->
+					<p class="form-group"> 
+						<label for="loginEmail">Email</label> 
+						<input id="loginEmail"  name="email" type="email" ng-model="login.email"  class="form-control" placeholder="Enter email" required>  
+					</p> 
+				<!--
+					<p class="form-group" ng-cloak ng-show="createMode"> 
+						<label for="loginCompany">Contact Number</label> 
+						<input id="loginConfirm" required name="confirm" type="tel" class="form-control" placeholder="Phone number">
+					</p> 
+				-->
+					<p class="form-group"> 
+						<label for="loginPass">Password</label> 
+						<input id="loginPass" name="password1" type="password"  ng-model="login.p1" class="form-control" placeholder="Enter password" required> 
+					</p>
+
+					<p class="form-group"> 
+						<label for="loginPass2">Confirm Password</label> 
+						<input id="loginPass2" name="password2" type="password"  ng-model="login.p2" class="form-control" placeholder="Confirm password" ui-validate=" '$value==login.p1' " ui-validate-watch=" 'login.p2' " required> 
+					</p>
+					
+					<p> 
+						<button class="btn btn-primary" ng-click="doLogin(login)" >Log In</button> 
+					<!--
+						<button class="btn btn-default" ng-click="createMode = true" ng-hide="createMode">Register</button> 
+						<button class="btn btn-primary" ng-cloak ng-show="createMode" ng-click="createAccount(email, pass, confirm)">Create Account</button> 
+						<button class="btn btn-default" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button> 
+					-->
+					</p>
+				</form>
+				
+			</div> 
+			<div > <a ng-href="/signup" class="signup"> If not a member please Signup</a> </p> </div>
+		</div>
+	</div> 
+	<div class="col-md-9 hidden-sm hidden-xs login-dude"> <img src="images/fillers/Guy_with_laptop.png" style="text-align: right"> </div> 
+</div>
