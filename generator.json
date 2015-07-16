@@ -154,7 +154,21 @@
 				}
 			]
 			
-		}
+		},
+		{
+			"name": "logout",
+			"attrs": [
+				{
+					"attrName": "myattr",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+			
+		},
 	],
 	"composer": false
 }

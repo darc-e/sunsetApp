@@ -4231,6 +4231,12 @@ a.signup:hover{
     color: #f7971e;
 }
 
+.customer-info{
+    font-size: 10px;
+}
+.customer-info span .highlight{
+    color: #f8981d;
+}
 .clear{
  clear:both;   
 }

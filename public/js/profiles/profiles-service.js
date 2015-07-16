@@ -2,7 +2,7 @@
 
 angular.module('sunsetApp')
   .factory('Profiles', ['$resource', function ($resource) {
-    return $resource('sunsetApp/profiles/:id', {}, {
+    return $resource('profiles/:id', {}, {
       'query': { method: 'GET', isArray: true},
       'get': { method: 'GET'},
       'update': { method: 'PUT'}

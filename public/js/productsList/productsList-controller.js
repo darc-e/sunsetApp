@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('ProductsListController', ['$scope', '$rootScope', '$modal', '$location',
-    function ($scope, $rootScope, $modal, $location) {
+  .controller('ProductsListController', ['$scope', '$rootScope', '$modal', '$location', '$cookies',
+    function ($scope, $rootScope, $modal, $location, $cookies) {
 
       if ($rootScope.loggedIn == 0 ){
         $location.path('/login');
       }
-     
+      //console.log("prodlidts: " + $rootScope.productsList );
       $scope.open = function (id) {
         var productListSave = $modal.open({
           templateUrl: 'productList-save.html',

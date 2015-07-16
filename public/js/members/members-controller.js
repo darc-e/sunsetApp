@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('MembersController', ['$rootScope', '$scope', '$modal', 'resolvedMembers', 'Members', '$location',
-    function ( $rootScope, $scope, $modal, resolvedMembers, Members, $location) {
+  .controller('MembersController', ['$rootScope', '$scope', '$modal', 'resolvedMembers', 'Members', '$location', '$cookies',
+    function ( $rootScope, $scope, $modal, resolvedMembers, Members, $location, $cookies) {
 
       $scope.members = resolvedMembers;
       $scope.error = "";
@@ -16,6 +16,10 @@ angular.module('sunsetApp')
             //console.log ("email:" + item.email + ", Password:" + item.password)
             if (login.email == item.email && login.p1 == item.password){
               $rootScope.loggedIn = 1;
+              $rootScope.member = item;
+                $cookies.putObject('client', item);
+              //$kookies.set('client_lname', item.last_name);
+              //$kookies.set('client_id', item.id);
               $location.path('/products');
             } else{
               $scope.error = "Login Information is Incorrect";

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('WhereToBuyController', ['$scope', '$modal', 
+  .controller('SignupController', ['$scope', '$modal', 
     function ($scope, $modal) {
     }]);

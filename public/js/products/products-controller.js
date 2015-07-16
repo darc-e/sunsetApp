@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('sunsetApp')
-  .controller('ProductsController', ['$rootScope', '$scope', '$modal', '$location', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles','resolvedHeights', 'Heights', '$routeParams', 
-    function ($rootScope, $scope, $modal, $location, resolvedProducts, Products, resolvedProfiles, Profiles, resolvedHeights, Heights, $routeParams) {
+  .controller('ProductsController', ['$rootScope', '$scope', '$modal', '$location', 'resolvedProducts', 'Products', 'resolvedProfiles', 'Profiles','resolvedHeights', 'Heights', '$routeParams', '$cookies',
+    function ($rootScope, $scope, $modal, $location, resolvedProducts, Products, resolvedProfiles, Profiles, resolvedHeights, Heights, $routeParams, $cookies) {
 
       $scope.products = resolvedProducts;
       //$scope.products =  _.groupBy($scope.products, 'prof_id');
       $scope.profiles = resolvedProfiles;
       $scope.heights = resolvedHeights;
       $scope.prod_id = $routeParams.id;
-     
-     
-
+      $scope.productsList = angular.copy($rootScope.productsList);
+      $scope.member = $cookies.getObject('client');
+      
+     console.log("prodlist: " + $scope.productsList);
      
       $scope.create = function () {
         $scope.clear();
@@ -77,10 +78,13 @@ angular.module('sunsetApp')
       };
 
       $scope.yellOut = function(prod){
+        //console.log("loggedIn: " + $rootScope.loggedIn); 
+
          $scope.productsList.push(prod); 
-         $rootScope.productsList = angular.copy($scope.productsList);
-         $location.path('productsList');
-         console.log ($scope.productsList);
+         $cookies.putObject('productsList', $scope.productsList)
+         $rootScope.productsList = $cookies.getObject('productsList');
+         $location.path('/productsList');
+        // console.log ("PROFLIST: " + $rootScope.productsList);
       };
     }])
   .controller('ProductsSaveController', ['$scope', '$modalInstance', 'products',
