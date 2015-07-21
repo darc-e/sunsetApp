@@ -11,8 +11,11 @@ angular.module('sunsetApp')
       $scope.prod_id = $routeParams.id;
       $scope.productsList = angular.copy($rootScope.productsList);
       $scope.member = $cookies.getObject('client');
-      
-     console.log("prodlist: " + $scope.productsList);
+      if ( $cookies.getObject('productsList') ){
+          $rootScope.productsList = $cookies.getObject('productsList');
+          $rootScope.loggedIn = 1;
+      }
+     console.log("prodlist: " + $rootScope.productsList);
      
       $scope.create = function () {
         $scope.clear();
@@ -79,7 +82,10 @@ angular.module('sunsetApp')
 
       $scope.yellOut = function(prod){
         //console.log("loggedIn: " + $rootScope.loggedIn); 
-
+        if ( $cookies.getObject('productsList') ){
+          $scope.productsList = $cookies.getObject('productsList');
+          
+        }
          $scope.productsList.push(prod); 
          $cookies.putObject('productsList', $scope.productsList)
          $rootScope.productsList = $cookies.getObject('productsList');
