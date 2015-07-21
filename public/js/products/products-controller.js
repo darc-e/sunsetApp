@@ -12,10 +12,10 @@ angular.module('sunsetApp')
       $scope.productsList = angular.copy($rootScope.productsList);
       $scope.member = $cookies.getObject('client');
       if ( $cookies.getObject('productsList') ){
-          $rootScope.productsList = $cookies.getObject('productsList');
-          $rootScope.loggedIn = 1;
+        $scope.productsList = $cookies.getObject('productsList');
+        
       }
-     console.log("prodlist: " + $rootScope.productsList);
+     console.log("prodlist: " + $scope.productsList);
      
       $scope.create = function () {
         $scope.clear();
